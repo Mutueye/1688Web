@@ -1,2 +1,2 @@
-# shibei-data
-Qingdao Shibei Data
+# 1688Web
+1688Website frontend
