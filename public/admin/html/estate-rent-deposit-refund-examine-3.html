@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">租赁押金退款申请-总经理审批<a class="btn btn-sm btn-theme pull-right" href="estate-rent-deposit.html"><i class="fa fa-undo"></i>&nbsp;返回</a></div>
+                </div>
+                <div class="col-xs-12 row-space-10">
+                    <form class="row no-bottom">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">押金类型：</div>
+                                <div class="cool-form-content">正常缴费</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">企业名称：</div>
+                                <div class="cool-form-content">海尔</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">法人代表：</div>
+                                <div class="cool-form-content">王小二</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">联系电话：</div>
+                                <div class="cool-form-content">13812345678</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">缴费金额：</div>
+                                <div class="cool-form-content">998</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">退款金额：</div>
+                                <input class="form-control" type="text" value="998" disabled>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">退款说明：</div>
+                                <textarea class="form-control textarea" style="resize: none;" rows="3" disabled>退款说明</textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">物业经理意见：</div>
+                                <textarea class="form-control textarea" style="resize: none;" rows="3" disabled>物业经理意见</textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">财务主管意见：</div>
+                                <textarea class="form-control textarea" style="resize: none;" rows="3" disabled>财务主管意见</textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">总经理意见：</div>
+                                <textarea class="form-control textarea" style="resize: none;" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="btn btn-large btn-theme" id="btn_ok"><i class="fa fa-check"></i>&nbsp;同意</div>
+                            <div class="btn btn-large bg-red bg-hover-darken font-white" id="btn_no"><i class="fa fa-remove"></i>&nbsp;退回</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                $('#btn_ok').click(function(){
+                    
+                    //表单验证&提交数据
+                    
+                    //此处直接跳转到审批后页面，用于前端演示
+                    window.location.href='estate-rent-deposit.html';
+                });
+                
+                $('#btn_no').click(function(){
+                    
+                    //表单验证&提交数据
+                    
+                    window.location.href='estate-rent-deposit.html';
+                    
+                })
+                
+            });
+        </script>
+    </body>
+</html>

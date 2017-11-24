@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="hisense">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <meta name="format-detection" content="telephone=no">
+        <title>1688Web</title>
+        <script src="../js/browserRedirect.js"></script>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/fileinput.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/theme.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="main-content">
+            <div class="topbar">
+                <div class="topbar-content"><a class="logo" href="index.html"><img src="../images/logo-white.png"></a>
+                    <div class="menu" id="menu">
+                        <div class="iscroller">
+                            <div class="rootmenu"><a class="menu-btn" href="index.html">首页</a></div>
+                            <div class="rootmenu"><a class="menu-btn" href="merchant-info.html">招商</a>
+                                <div class="submenu"><a class="submenu-btn" href="merchant-info.html">招商信息</a><a class="submenu-btn" href="merchant-area.html">招商区域</a></div>
+                            </div>
+                            <div class="rootmenu"><a class="menu-btn" href="news-industry.html">资讯</a>
+                                <div class="submenu"><a class="submenu-btn" href="news-industry.html">行业资讯</a><a class="submenu-btn" href="news-park.html">园区新闻</a><a class="submenu-btn" href="news-notice.html">通知公告</a><a class="submenu-btn" href="news-policy.html">政策法规</a></div>
+                            </div>
+                            <div class="rootmenu"><a class="menu-btn" href="chuangye-achieve.html">创业</a>
+                                <div class="submenu"><a class="submenu-btn" href="chuangye-achieve.html">创业成果</a><a class="submenu-btn" href="chuangye-space.html">众创空间</a><a class="submenu-btn" href="chuangye-coach.html">创业辅导</a><a class="submenu-btn" href="chuangye-teacher.html">创业导师</a><a class="submenu-btn" href="chuangye-train.html">创业培训</a><a class="submenu-btn" href="chuangye-roadshow.html">创业路演</a><a class="submenu-btn" href="chuangye-help.html">创业扶持</a><a class="submenu-btn" href="chuangye-product.html">产品展厅</a><a class="submenu-btn" href="chuangye-lecture.html">专家讲座</a><a class="submenu-btn" href="chuangye-salon.html">企业沙龙</a><a class="submenu-btn" href="chuangye-dock.html">中外对接</a><a class="submenu-btn" href="chuangye-commu.html">技术交流</a></div>
+                            </div>
+                            <div class="rootmenu"><a class="menu-btn" href="resource-invest.html">资源</a>
+                                <div class="submenu"><a class="submenu-btn" href="resource-invest.html">融资服务</a><a class="submenu-btn" href="resource-finance.html">财税服务</a><a class="submenu-btn" href="resource-hr.html">人力资源</a><a class="submenu-btn" href="resource-management.html">管理咨询</a><a class="submenu-btn" href="resource-law.html">法律服务</a><a class="submenu-btn" href="resource-patent.html">专利服务</a><a class="submenu-btn" href="resource-coach.html">培训服务</a></div>
+                            </div>
+                            <div class="rootmenu"><a class="menu-btn" href="company-star.html">名企</a>
+                                <div class="submenu"><a class="submenu-btn" href="company-star.html">明星企业</a><a class="submenu-btn" href="company-lead.html">创业领军企业</a></div>
+                            </div>
+                            <div class="rootmenu"><a class="menu-btn" href="park-facility.html">园区</a>
+                                <div class="submenu"><a class="submenu-btn" href="park-facility.html">园区配套</a><a class="submenu-btn" href="park-activity.html">园区活动</a><a class="submenu-btn" href="park-life.html">园区生活</a><a class="submenu-btn" href="park-hr.html">企业招聘</a></div>
+                            </div>
+                            <div class="rootmenu">
+                                <div class="menu-btn">党团</div>
+                                <div class="submenu">
+                                    <div class="submenu-container"><a class="submenu-btn" href="party-build-world.html">党建园地</a>
+                                        <div class="subsubmenu"><a class="subsubmenu-btn" href="party-build-world.html">党员天地</a><a class="subsubmenu-btn" href="party-build-news.html">党建要闻</a></div>
+                                    </div>
+                                    <div class="submenu-container"><a class="submenu-btn" href="party-union-news.html">工会动态</a>
+                                        <div class="subsubmenu"><a class="subsubmenu-btn" href="party-union-news.html">工会快讯</a><a class="subsubmenu-btn" href="party-union-hotspot.html">热点聚焦</a></div>
+                                    </div>
+                                    <div class="submenu-container"><a class="submenu-btn" href="party-member-world.html">团员聚焦</a>
+                                        <div class="subsubmenu"><a class="subsubmenu-btn" href="party-member-world.html">团员天地</a><a class="subsubmenu-btn" href="party-member-news.html">基层团讯</a><a class="subsubmenu-btn" href="party-member-style.html">青春风采</a></div>
+                                    </div>
+                                    <div class="submenu-container"><a class="submenu-btn" href="party-learn-hotspot.html">学习交流</a>
+                                        <div class="subsubmenu"><a class="subsubmenu-btn" href="party-learn-hotspot.html">时事热点</a><a class="subsubmenu-btn" href="party-learn-story.html">先锋故事</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rootmenu"><a class="menu-btn" href="about-intro.html">关于</a>
+                                <div class="submenu"><a class="submenu-btn" href="about-intro.html">园区简介</a><a class="submenu-btn" href="about-structure.html">组织架构</a><a class="submenu-btn" href="about-history.html">大事记</a><a class="submenu-btn" href="about-plan.html">园区规划</a><a class="submenu-btn" href="about-culture.html">园区文化</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-area">
+                        <div class="user-info-container">
+                            <div class="user-avatar"><img src="../images/avatar-default.jpg"></div>
+                            <div class="user-name">上善若水&nbsp;<i class="fa fa-angle-down"></i></div>
+                            <div class="user-menu-arrow"></div>
+                            <div class="user-menu-container">
+                                <div class="user-menu"><a class="user-menu-btn" href="personal-message.html">个人中心</a><a class="user-menu-btn" href="#">退出登录</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-mask"></div>
+            <div class="main-body">
+                <div class="topbar-space"></div>
+                <div class="row-space-0">
+                    <div class="container tp-container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="user-info" id="user_info">
+                                    <div class="user-info-avatar-box">
+                                        <div class="user-info-avatar"><img src="../images/avatar-default.jpg"></div>
+                                    </div>
+                                    <div class="user-info-content">
+                                        <div class="user-name">上善若水</div>
+                                        <div class="user-info-line"><span class="font-gray-99">邮箱：</span>mail@mail.com</div>
+                                        <div class="user-info-line"><span class="font-gray-99">手机号：</span>13812345678</div>
+                                        <div class="user-info-line"><span class="font-gray-99">性别：</span>男</div>
+                                        <div class="btn btn-small btn-edit btn-theme" id="btn_edit"> <i class="fa fa-edit"></i>&nbsp;修改资料</div>
+                                    </div>
+                                </div>
+                                <div class="user-info user-form" id="user_form">
+                                    <form class="user-info-content row-space-10" id="form">
+                                        <div class="row no-bottom">
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group cool-form-group form-group-sm">
+                                                    <div class="cool-form-label text-right control-label">用户名：</div>
+                                                    <input class="form-control" type="text" name="username" id="username">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group cool-form-group form-group-sm">
+                                                    <div class="cool-form-label text-right control-label">邮箱：</div>
+                                                    <input class="form-control" type="text" name="email" id="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group cool-form-group form-group-sm">
+                                                    <div class="cool-form-label text-right control-label">手机号：</div>
+                                                    <input class="form-control" type="text" name="phone" id="phone">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group cool-form-group form-group-sm">
+                                                    <div class="cool-form-label text-right control-label">性别：</div>
+                                                    <select class="form-control" name="gender" id="gender">
+                                                        <option>男</option>
+                                                        <option>女</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <div class="form-group cool-form-group form-group-sm">
+                                                    <div class="cool-form-label text-right control-label">头像：</div>
+                                                    <input class="form-control input-file" id="input_appendix" type="file">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 text-center">
+                                                <div class="btn btn-theme btn-large" id="btn_save"> <i class="fa fa-save"></i>&nbsp;保存修改</div>
+                                                <div class="btn btn-default btn-large bg-gray-f5 bg-hover-darken" id="btn_cancel">取消</div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <ul class="nav nav-tabs tp-tab">
+                                    <li class="active"><a href="personal-message.html">我的留言</a></li>
+                                    <li><a href="personal-notice.html">
+                                             我的通知<span class="num">2</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-10">
+                                <div class="tp-content tab-pane active" id="message">
+                                    <div class="deco-box"></div>
+                                    <div class="tp-content-title">我的留言
+                                        <div class="tp-content-title-deco">中艺1688<br>SHANDONG ARTEX</div>
+                                    </div>
+                                    <div class="tp-content-inner">
+                                        <div class="message-filter">您当前正在给：<span class="font-blue-ocean">Isabella Yang </span>&nbsp;回复留言</div>
+                                        <div class="message-list" id="message_list">
+                                            <div class="message-item left readed">
+                                                <div class="message-item-name">Isabella Yang</div>
+                                                <div class="message-item-avatar">
+                                                    <div class="message-item-avatar-ball"><img src="../images/avatar-default.jpg"></div>
+                                                </div>
+                                                <div class="message-item-text">
+                                                     今天18:00需要准备XX报告到401D
+                                                    <div class="message-item-time">2017-12-34 12:42</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="message-editor">
+                                            <textarea class="message-textarea" id="message_text" rows="2"></textarea>
+                                            <div class="message-sendbtn">
+                                                <div class="btn btn-theme btn-small" id="btn_reply">回复</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 mobile-hidden">
+                                <div class="pull-left">
+                                    <div class="phone"><i class="fa fa-phone-square"></i>&nbsp;0532-81931688</div>
+                                    <div class="address">地址:中国青岛李沧区黑龙江中路398号</div>
+                                    <div class="address">传真:+86-532-87665578</div>
+                                </div>
+                                <div class="pull-left contact-icons">
+                                    <div class="link-icon"><i class="fa fa-weibo"></i></div>
+                                    <div class="link-icon"><i class="fa fa-weixin"></i>
+                                        <div class="link-icon-qrcode-pop">
+                                            <div class="imgbox"><img src="../images/qrcode.png"></div>
+                                        </div>
+                                    </div>
+                                    <div class="link-icon"><i class="fa fa-qq"></i>
+                                        <div class="link-icon-qrcode-pop">
+                                            <div class="imgbox"><img src="../images/qrcode.png"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pull-right">
+                                    <div class="logos">
+                                        <div class="logo"><img src="../images/logo-white.png"></div>
+                                        <div class="logo"><img src="../images/logo-wuye.png"></div>
+                                    </div>
+                                    <div class="btn-join"><span>友情链接</span>
+                                        <div class="flinks"><a href="javascript:;">中艺官方网站</a><a href="javascript:;">中国软件行业协会官方网站</a><a href="javascript:;">山东人力资源官网</a><a href="javascript:;">青岛政务网</a><a href="javascript:;">青岛崂山创新园官方网站</a><a href="javascript:;">青岛海尔云谷官方网站</a><a href="javascript:;">青岛市南软件园官方网站</a><a href="javascript:;">青岛湛山创意工厂官方网站</a><a href="javascript:;">中艺官方网站</a><a href="javascript:;">中国软件行业协会官方网站</a><a href="javascript:;">山东人力资源官网</a><a href="javascript:;">青岛政务网</a><a href="javascript:;">青岛崂山创新园官方网站</a><a href="javascript:;">青岛海尔云谷官方网站</a><a href="javascript:;">青岛市南软件园官方网站</a><a href="javascript:;">青岛湛山创意工厂官方网站</a></div>
+                                        <div class="flink-arrow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="links mobile-hidden"></div>
+                                <div class="coypright">
+                                     &nbsp;版权所有：中艺1688创意产业园&nbsp;<br class="mobile-visible">Copyright ©2012-2017 All Rights Reserved Zhongyi Design Co.,ltd&nbsp;&nbsp;站点统计：<a href="https://web.umeng.com/demo.php" target="_blank"><img src="../images/cnzz.png" style="margin-top:-2px;"></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <div class="sidebar-logo"></div>
+                    <div class="sidebar-title">
+                         快捷导航
+                        <div class="sidebar-title-deco"></div>
+                    </div><a class="sidebar-btn sbbtn-1" href="join-submit.html"><i class="fa fa-sign-in"></i>&nbsp;申请入驻</a><a class="sidebar-btn sbbtn-2" href="javascript:;"> <i class="fa fa-cutlery"></i>&nbsp;美食广场</a><a class="sidebar-btn sbbtn-3" href="javascript:;"> <i class="fa fa-building"></i>&nbsp;物业申请</a><a class="sidebar-btn sbbtn-4" href="javascript:;"> <i class="fa fa-bank"></i>&nbsp;展厅申请</a><a class="sidebar-btn sbbtn-5" href="javascript:;"> <i class="fa fa-car"></i>&nbsp;智慧停车</a><a class="sidebar-btn sbbtn-6" href="javascript:;"> <i class="fa fa-commenting"></i>&nbsp;企业诉求</a>
+                    <div class="sidebar-btn sbbtn-7" id="btn_totop"><i class="fa fa-arrow-up"></i>&nbsp;返回顶端</div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="../js/bootstrapvalidator/zh_CN.js"></script>
+        <script src="../js/bootstrap-fileinput/fileinput.min.js"></script>
+        <script src="../js/bootstrap-fileinput/zh.js"></script>
+        <script src="../js/bootstrap-fileinput/theme.min.js"></script>
+        <script src="../js/moment/moment.min.js"></script>
+        <script src="../js/moment/zh-cn.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/login.js"></script>
+        <script src="../js/personal-message-reply.js"></script>
+    </body>
+</html>

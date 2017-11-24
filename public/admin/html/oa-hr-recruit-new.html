@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">新增招聘申请<a class="btn btn-sm btn-theme pull-right" href="oa-hr-recruit.html"><i class="fa fa-undo"></i>&nbsp;返回</a></div>
+                </div>
+                <div class="col-xs-12 row-space-10">
+                    <form class="row no-bottom" id="form" name="form">
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">岗位：</div>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">所属部门：</div>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">人数：</div>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">性别：</div>
+                                <select class="form-control">
+                                    <option>无限制</option>
+                                    <option>男性</option>
+                                    <option>女性</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">学历：</div>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">到岗时间：</div>
+                                <div class="input-group date" id="workdate">
+                                    <input class="form-control" type="text" id="worktime" name="worktime">
+                                    <div class="input-group-addon btn btn-line"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">岗位职责：</div>
+                                <textarea class="textarea form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">其他要求：</div>
+                                <textarea class="textarea form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">申请原因及申请人：</div>
+                                <textarea class="textarea form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">部门经理意见：</div>
+                                <textarea class="textarea form-control" rows="3" disabled></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">人力资源部意见：</div>
+                                <textarea class="textarea form-control" rows="3" disabled></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">园区副总经理意见：</div>
+                                <textarea class="textarea form-control" rows="3" disabled></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">园区总经理意见：</div>
+                                <textarea class="textarea form-control" rows="3" disabled></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="btn btn-large btn-theme" id="btn_submit"><i class="fa fa-upload"></i>&nbsp;提交</div>
+                            <div class="btn btn-large btn-theme" id="btn_save"><i class="fa fa-save"></i>&nbsp;保存</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="../js/bootstrapvalidator/zh_CN.js"></script>
+        <script src="../js/moment/moment.min.js"></script>
+        <script src="../js/moment/zh-cn.js"></script>
+        <script src="../js/bootstrap-datetimepicker.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/oa-hr-recruit-new.js"></script>
+    </body>
+</html>

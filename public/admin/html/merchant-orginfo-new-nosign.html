@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">
+                         未签约企业信息录入<a class="btn btn-sm btn-theme pull-right" href="merchant-orginfo.html"><i class="fa fa-undo"></i>&nbsp;返回</a></div>
+                </div>
+                <div class="col-xs-12 row-space-10">
+                    <form class="row no-bottom">
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">客户全称：</div>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">企业行业：</div>
+                                <select class="form-control">
+                                    <option>高新科技企业</option>
+                                    <option>纺织业</option>
+                                    <option>制造业</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">法人：</div>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">联系方式：</div>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">注册地：</div>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">备注：</div>
+                                <textarea class="form-control textarea" style="resize: none;" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12">
+                            <div class="btn btn-large btn-theme" id="btn_submit"><i class="fa fa-upload"></i>&nbsp;提交保存</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                $("#btn_submit").click(function(){
+                    
+                    //提交数据成功后，返回上级页面
+                    window.location.href='merchant-orginfo.html';
+                    
+                });
+                
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-table.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/fileinput.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/theme.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">投融资服务</div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="box-form has-title row-space-10">
+                        <div class="box-form-title">查询条件</div>
+                        <form class="row no-bottom" id="query_form" name="query_form">
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">状态：</div>
+                                    <select class="form-control">
+                                        <option>全部</option>
+                                        <option>审核中</option>
+                                        <option>待审核</option>
+                                        <option>发布</option>
+                                        <option>暂存</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">起始时间：</div>
+                                    <div class="input-group date" id="start_time">
+                                        <input class="form-control" type="text">
+                                        <div class="btn btn-line input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">截止时间：</div>
+                                    <div class="input-group date" id="end_time">
+                                        <input class="form-control" type="text">
+                                        <div class="btn btn-line input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="btn btn-line btn-small"><i class="fa fa-search"></i>&nbsp;查询</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="toolbar" id="toolbar"><a class="btn btn-theme" id="toolbtn_new" href="resource-invest-new.html"><i class="fa fa-plus"></i>&nbsp;申请</a>
+                        <div class="btn btn-theme" id="toolbtn_examine"><i class="fa fa-check-square"></i>&nbsp;审核</div>
+                        <div class="btn btn-theme" id="toolbtn_edit"><i class="fa fa-edit"></i>&nbsp;编辑</div>
+                        <div class="btn btn-theme" id="toolbtn_chat"><i class="fa fa-comments"></i>&nbsp;交流统计</div>
+                    </div>
+                    <table id="table"></table>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/moment/moment.min.js"></script>
+        <script src="../js/moment/zh-cn.js"></script>
+        <script src="../js/bootstrap-datetimepicker.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-export.min.js"></script>
+        <script src="../js/tableExport.min.js"></script>
+        <script src="../js/bootstrap-fileinput/fileinput.min.js"></script>
+        <script src="../js/bootstrap-fileinput/zh.js"></script>
+        <script src="../js/bootstrap-fileinput/theme.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                var $btn_examine = $('#toolbtn_examine');
+                var $btn_edit = $('#toolbtn_edit');
+                var $btn_chat = $('#toolbtn_chat');
+            
+                var $table = $('#table');
+                
+                window.commonTools.setDateTimeInputSection($('#start_time'), $('#end_time'));
+                
+                $table.bootstrapTable({
+                    toolbar : '#toolbar',
+                    showColumns : true,
+                    showToggle : true,
+                    showExport : true,
+                    pagination : true,
+                    singleSelect : true,
+                    showPaginationSwitch : false,
+                    clickToSelect : true,
+                    columns: [
+                        {
+                            field: 'check',
+                            radio: true,
+                            align: 'center',
+                            valign: 'middle'
+                        },
+                        {
+                            field: 'id',
+                            title: '序号',
+                            sortable: true,
+                            halign: 'center',
+                            align: 'right',
+                            width: 30
+                        }, 
+                        {
+                            field: 'service_provider',
+                            title: '投融资服务第三方服务商',
+                            halign: 'center'
+                        }, 
+                        {
+                            field: 'state',
+                            title: '状态',
+                            halign: 'center'
+                        }, 
+                        {
+                            field: 'date',
+                            title: '时间',
+                            halign: 'center',
+                            align: 'center'
+                        }
+                    ],
+                    data: [
+                        {
+                            id : 1,
+                            service_provider : '第三方服务商1',
+                            state : '发布',
+                            date : '2018-10-23'
+                        },
+                        {
+                            id : 2,
+                            service_provider : '第三方服务商2',
+                            state : '暂存',
+                            date : '2018-02-05'
+                        },
+                        {
+                            id : 3,
+                            service_provider : '第三方服务商3',
+                            state : '审核中',
+                            date : '2018-07-10'
+                        },
+                        {
+                            id : 4,
+                            service_provider : '第三方服务商4',
+                            state : '待审核',
+                            date : '2018-07-10'
+                        }
+                    ]
+                });
+                
+                //设置工具栏按钮禁用状态
+                setToolBtnDisableState();
+                $table.on('check.bs.table uncheck.bs.table check-all.bs.table uncheck-all.bs.table', function () {
+                    setToolBtnDisableState();
+                });
+                
+                //编辑
+                $btn_edit.click(function () {
+                    if(!$(this).attr('disabled')) {
+                        //取表格的选中行数据
+                        var arrselections = $table.bootstrapTable('getSelections');
+                        if (arrselections.length <= 0) {
+                            toastr.warning('请选择有效数据');
+                            return;
+                        }
+                        console.log(JSON.stringify(arrselections));
+            
+                        window.location.href='resource-invest-edit.html';
+                    }
+                });
+                
+                //审核
+                $btn_examine.click(function () {
+                    if(!$(this).attr('disabled')) {
+                        //取表格的选中行数据
+                        var arrselections = $table.bootstrapTable('getSelections');
+                        if (arrselections.length <= 0) {
+                            toastr.warning('请选择有效数据');
+                            return;
+                        }
+                        console.log(JSON.stringify(arrselections));
+            
+                        window.location.href='resource-invest-examine.html';
+                    }
+                });
+                
+                //交流统计
+                $btn_chat.click(function () {
+                    if(!$(this).attr('disabled')) {
+                        //取表格的选中行数据
+                        var arrselections = $table.bootstrapTable('getSelections');
+                        if (arrselections.length <= 0) {
+                            toastr.warning('请选择有效数据');
+                            return;
+                        }
+                        console.log(JSON.stringify(arrselections));
+            
+                        window.location.href='resource-invest-chat.html';
+                    }
+                });
+                
+                
+                function setToolBtnDisableState() {
+                    var tableSelections = $table.bootstrapTable('getSelections');
+                    $btn_edit.attr('disabled', tableSelections.length != 1);
+                    $btn_chat.attr('disabled', tableSelections.length != 1);
+                    //待审核状态才可以点击审核按钮
+                    $btn_examine.attr('disabled', tableSelections.length != 1 || (tableSelections.length == 1 && tableSelections[0].state != '待审核'));
+                }
+                
+            });
+        </script>
+    </body>
+</html>

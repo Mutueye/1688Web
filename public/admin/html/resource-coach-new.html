@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-table.min.css">
+        <link rel="stylesheet" href="../js/summernote/summernote.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/fileinput.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/theme.min.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">培训服务申请<a class="btn btn-sm btn-theme pull-right" href="resource-coach.html"><i class="fa fa-undo"></i>&nbsp;返回</a></div>
+                </div>
+                <div class="col-xs-12 row-space-10">
+                    <form class="row no-bottom" id="form" name="form">
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>公司名称：</div>
+                                <input class="form-control" id="orgname" type="text" name="orgname">
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>公司简介：</div>
+                                <textarea class="textarea form-control" id="orgintro" name="orgintro" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">
+                                     公司logo：</div>
+                                <input class="form-control input-file" id="input_appendix" type="file" name="orglogo">
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*</span>&nbsp;公司介绍：</div>
+                                <div class="cool-form-content summernote-content">
+                                    <div id="summernote"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="btn btn-large btn-theme" id="btn_publish"><i class="fa fa-upload"></i>&nbsp;提交申请</div>
+                            <div class="btn btn-large btn-theme" id="btn_draft"><i class="fa fa-save"></i>&nbsp;暂存</div>
+                            <div class="btn btn-large btn-theme" id="btn_preview"><i class="fa fa-eye"></i>&nbsp;预览</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/moment/moment.min.js"></script>
+        <script src="../js/moment/zh-cn.js"></script>
+        <script src="../js/bootstrap-datetimepicker.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+        <script src="../js/bootstrap-fileinput/fileinput.min.js"></script>
+        <script src="../js/bootstrap-fileinput/zh.js"></script>
+        <script src="../js/bootstrap-fileinput/theme.min.js"></script>
+        <script src="../js/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="../js/bootstrapvalidator/zh_CN.js"></script>
+        <script src="../js/summernote/summernote.min.js"></script>
+        <script src="../js/summernote/summernote-zh-CN.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var $orgname = $('#orgname'); //文章标题
+                var $summernote = $('#summernote'); //富文本编辑器
+                var $btn_publish = $('#btn_publish'); //按钮发布
+                var $btn_draft = $('#btn_draft'); //按钮暂存
+                var $btn_preview = $('#btn_preview'); //按钮预览
+                var $input_appendix = $('#input_appendix');
+                var $form = $('#form');
+                
+                //附件上传 初始化fileinput插件
+                window.commonTools.initBSFileInput($input_appendix);
+                
+                $summernote.summernote({
+                    lang: 'zh-CN',
+                    minHeight: 300,
+                    maxHeight: 600,
+                    toolbar: [
+                        ['para', ['style', 'ul', 'ol', 'paragraph']],
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['Insert',['picture', 'link', 'table']],
+                        ['misc', ['undo', 'redo', 'fullscreen']]
+                    ]
+                });
+                
+                //发布
+                $btn_publish.click(function(){
+                    if(checkValidation()) {
+                        //此处提交数据，提交成功后，返回上级页面
+                        window.location.href='resource-coach.html';
+                    }
+                });
+                
+                //暂存
+                $btn_draft.click(function(){
+                    if(checkValidation()) {
+                        //此处提交数据，提交成功后，弹出如下提示
+                        toastr.success('您编辑的内容已暂存');
+                    }
+                });
+                
+                //预览
+                $btn_preview.click(function(){
+                    
+                    if(checkValidation()) {
+                        var logoUrl = commonTools.getFilePath($("#input_appendix"));
+                        if(logoUrl == '' || !logoUrl) logoUrl = '../images/rcs-empty.jpg';
+                        var htmlStr =   '<div class="row-space-common">' +
+                                            '<div class="row">' +
+                                                '<div class="col-xs-12">' +
+                                                    '<div class="orgintro-container">' +
+                                                        '<div class="orgintro-logo">' +
+                                                            '<img src="' + logoUrl + '">' +
+                                                        '</div>' +
+                                                        '<div class="orgintro-title">' + $('#orgname').val() + '</div>' +
+                                                        '<div class="orgintro-content">' + $('#orgintro').val() + '</div>' +
+                                                    '</div>' +
+                                                '</div>' +
+                                                '<div class="col-xs-12">' +
+                                                    '<div class="section-title">' +
+                                                        '<div class="section-title-icon"></div>' +
+                                                        '<div class="section-title-text">服务详情</div>' +
+                                                    '</div>' +
+                                                    '<div class="article-content">' +
+                                                        $summernote.summernote('code') +
+                                                    '</div>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>';
+                        BSModal.confirm({
+                            title : '预览',
+                            content : htmlStr,
+                            width : '90%',
+                            btnOK : '确定',
+                            btnCancel : '',
+                            maxHeight: '450px'
+                        });
+                    }
+                });
+                
+                $form.bootstrapValidator({
+                    fields: {
+                        orgname: {
+                            message: '公司名称验证失败',
+                            validators: {
+                                notEmpty: {
+                                    message: '公司名称不能为空'
+                                }
+                            }
+                        },
+                        orgintro: {
+                            message: '公司简介验证失败',
+                            validators: {
+                                notEmpty: {
+                                    message: '公司简介不能为空'
+                                }
+                            }
+                        }
+                    }
+                });
+                
+                //判断必填项是否都已填入内容
+                function checkValidation() {
+                    if($summernote.summernote('isEmpty')) {
+                        toastr.warning('公司介绍不能为空');
+                        return false;
+                    } else {
+                        var bsValidator = $form.data('bootstrapValidator');
+                        bsValidator.validate();
+                        var result = bsValidator.isValid();
+                        if(!result) {
+                            toastr.warning('您输入的表单信息验证未通过');
+                        }
+                        return result;
+                    }
+                }
+                
+            });
+        </script>
+    </body>
+</html>

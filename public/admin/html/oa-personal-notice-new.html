@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-treeview.min.css">
+        <link rel="stylesheet" href="../js/iCheck/skins/square/_all.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">通知公告发布<a class="btn btn-sm btn-theme pull-right" href="oa-personal-notice.html"><i class="fa fa-undo"></i>&nbsp;返回</a></div>
+                </div>
+                <div class="col-xs-12 row-space-10">
+                    <form class="row no-bottom" id="form" name="form">
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">类型：</div>
+                                <select class="form-control" id="type" name="type">
+                                    <option>通知</option>
+                                    <option>公告</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-8">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>标题：</div>
+                                <input class="form-control" id="mission_name" type="text" name="mission_name">
+                            </div>
+                        </div>
+                        <div class="col-xs-12" id="notice_list_container">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">通知名单：</div>
+                                <div class="dropdown treeview-select">                         
+                                    <button class="treeview-select-btn" type="button" id="btn_notice_list" data-toggle="dropdown"></button>
+                                    <input class="treeview-select-input" type="text" id="notice_list">
+                                    <div class="dropdown-menu treeview-select-tree" style="width:100%;" id="tree"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>内容：</div>
+                                <textarea class="textarea form-control" id="content" name="content" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="btn btn-large btn-theme" id="btn_publish"><i class="fa fa-upload"></i>&nbsp;发布</div>
+                            <div class="btn btn-large btn-theme" id="btn_draft"><i class="fa fa-save"></i>&nbsp;暂存</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="../js/bootstrapvalidator/zh_CN.js"></script>
+        <script src="../js/bootstrap-select/bootstrap-select.min.js"></script>
+        <script src="../js/bootstrap-select/defaults-zh_CN.min.js"></script>
+        <script src="../js/bootstrap-treeview.min.js"></script>
+        <script src="../js/iCheck/icheck.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/oa-personal-notice-new.js"></script>
+    </body>
+</html>

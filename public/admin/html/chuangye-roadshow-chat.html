@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-table.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/fileinput.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/theme.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">
+                         创业路演报名统计<a class="btn btn-sm btn-theme pull-right" href="chuangye-roadshow.html"><i class="fa fa-undo"></i>&nbsp;返回</a></div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group cool-form-group form-group-sm">
+                        <div class="cool-form-label text-right control-label">创业路演主题：</div>
+                        <div class="cool-form-content">2018年1688创意产业园VR行业创业路演</div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="toolbar" id="toolbar">
+                        <div class="btn btn-theme" id="toolbtn_examine"><i class="fa fa-check-square"></i>&nbsp;审核</div>
+                    </div>
+                    <table id="table"></table>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/moment/moment.min.js"></script>
+        <script src="../js/moment/zh-cn.js"></script>
+        <script src="../js/bootstrap-datetimepicker.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-export.min.js"></script>
+        <script src="../js/tableExport.min.js"></script>
+        <script src="../js/bootstrap-fileinput/fileinput.min.js"></script>
+        <script src="../js/bootstrap-fileinput/zh.js"></script>
+        <script src="../js/bootstrap-fileinput/theme.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                var $btn_examine = $('#toolbtn_examine');
+                var $table = $('#table');
+                
+                $table.bootstrapTable({
+                    toolbar : '#toolbar',
+                    showColumns : true,
+                    showToggle : true,
+                    showExport : true,
+                    pagination : true,
+                    singleSelect : true,
+                    showPaginationSwitch : false,
+                    clickToSelect : true,
+                    columns: [
+                        {
+                            field: 'check',
+                            radio: true,
+                            align: 'center',
+                            valign: 'middle'
+                        },
+                        {
+                            field: 'id',
+                            title: '序号',
+                            sortable: true,
+                            halign: 'center',
+                            align: 'right',
+                            width: 30
+                        }, 
+                        {
+                            field: 'name',
+                            title: '报名人',
+                            halign: 'center'
+                        },
+                        {
+                            field: 'project',
+                            title: '项目名称',
+                            halign: 'center'
+                        },
+                        {
+                            field: 'contact',
+                            title: '联系方式',
+                            halign: 'center'
+                        },
+                        {
+                            field: 'auditor',
+                            title: '审核人',
+                            halign: 'center'
+                        }, 
+                        {
+                            field: 'state',
+                            title: '状态',
+                            halign: 'center'
+                        }
+                    ],
+                    data: [
+                        {
+                            id : 1,
+                            name : '王中举',
+                            project : '项目1',
+                            contact : '13812345678',
+                            auditor : '审核人1',
+                            state : '待审核'
+                        },
+                        {
+                            id : 2,
+                            name : '柳下惠',
+                            project : '项目2',
+                            contact : '13812345678',
+                            auditor : '审核人2',
+                            state : '审核通过'
+                        },
+                        {
+                            id : 3,
+                            name : '慕容博',
+                            project : '项目3',
+                            contact : '13812345678',
+                            auditor : '审核人2',
+                            state : '审核未通过'
+                        }
+                    ]
+                });
+                
+                //设置工具栏按钮禁用状态
+                setToolBtnDisableState();
+                $table.on('check.bs.table uncheck.bs.table check-all.bs.table uncheck-all.bs.table', function () {
+                    setToolBtnDisableState();
+                });
+                
+                //审核
+                $btn_examine.click(function () {
+                    if(!$(this).attr('disabled')) {
+                        //取表格的选中行数据
+                        var arrselections = $table.bootstrapTable('getSelections');
+                        if (arrselections.length <= 0) {
+                            toastr.warning('请选择有效数据');
+                            return;
+                        }
+                        console.log(JSON.stringify(arrselections));
+            
+                        window.location.href='chuangye-roadshow-user-examine.html';
+                    }
+                });
+                
+                function setToolBtnDisableState() {
+                    var tableSelections = $table.bootstrapTable('getSelections');
+                    //待审核状态才可以点击审核按钮
+                    $btn_examine.attr('disabled', tableSelections.length != 1 || (tableSelections.length == 1 && tableSelections[0].state != '待审核'));
+                }
+                
+            });
+        </script>
+    </body>
+</html>

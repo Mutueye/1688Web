@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">
+                         装修审批<a class="btn btn-sm btn-theme pull-right" href="estate-decoration.html"><i class="fa fa-undo"></i>&nbsp;返回</a></div>
+                </div>
+                <div class="col-xs-12 row-space-10">
+                    <form class="row no-bottom">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">申请人：</div>
+                                <div class="cool-form-content">海尔</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">标题：</div>
+                                <div class="cool-form-content">壁纸修改</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">装修原因：</div>
+                                <div class="cool-form-content">壁纸风格不喜欢</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">保证金数额：</div>
+                                <div class="cool-form-content">2301元</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">附件：</div>
+                                <div class="cool-form-content"><a href="#">装修图纸1.jpg</a><br><a href="#">装修图纸2.jpg</a></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">审批意见：</div>
+                                <textarea class="form-control textarea" id="suggestion" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="btn btn-large btn-theme" id="btn_ok"><i class="fa fa-check"></i>&nbsp;批准</div>
+                            <div class="btn btn-large bg-red bg-hover-darken font-white" id="btn_no"><i class="fa fa-remove"></i>&nbsp;驳回</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                var $btn_ok = $('#btn_ok'); //按钮 审核通过
+                var $btn_no = $('#btn_no'); //按钮 审核不通过
+                
+                //审核通过
+                $btn_ok.click(function(){
+                    
+                    if($('#suggestion').val().length != 0) {
+                        BSModal.confirm({ content: "您确定审核通过吗"}).on(function (e) {
+                            if (!e) {
+                                return;
+                            }
+                            
+                            //提交审核通过数据...
+                            
+                            //此处仅是前端演示提交成功后的效果：跳转回上级页面
+                            //window.location.href='estate-decoration.html';
+                            //跳转到装修前存档页面
+                            window.location.href='estate-decoration-approval-initsave.html';
+                            
+                            //如审核通过提交失败，弹出提示消息
+                            //toastr.error('提交审核通过信息失败，请重试');
+                        });
+                    } else {
+                        toastr.warning('请输入审核意见');
+                    }
+                    
+                    
+                });
+                
+                //审核不通过
+                $btn_no.click(function(){
+                    if($('#suggestion').val().length != 0) {
+                        BSModal.confirm({ content: "您确定驳回申请吗"}).on(function (e) {
+                            if (!e) {
+                                return;
+                            }
+                            
+                            //提交数据...
+                            
+                            //此处仅是前端演示提交成功后的效果：跳转回上级页面
+                            window.location.href='estate-decoration.html';
+                            
+                            //如审核通过提交失败，弹出提示消息
+                            //toastr.error('提交审核通过信息失败，请重试');
+                        });
+                    } else {
+                        toastr.warning('请输入审核意见');
+                    }
+                });
+                
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../js/iCheck/skins/square/_all.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="login-content">
+            <div class="login-logo"><img src="../images/logo-white.png"></div>
+            <form class="login-box" id="form_login" name="loginform">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="login-title">系统登录</div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>用户名</label>
+                            <div class="input-group login-input-group">
+                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                <input class="form-control" type="text" placeholder="用户名" name="username">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>密码</label>
+                            <div class="input-group login-input-group">
+                                <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                                <input class="form-control" type="password" placeholder="密码" name="password">
+                            </div>
+                        </div>
+                        <div class="form-group mt-space">
+                            <label class="icheck-block icheck-btn">
+                                <input type="checkbox" name="checkbox_remember" id="checkbox_remember">
+                                <div class="icheck-text">&nbsp;下次自动登录</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn btn-block btn-login" id="btn_login">登录</div>
+                <div class="btn-login-pillow"></div>
+            </form>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="../js/bootstrapvalidator/zh_CN.js"></script>
+        <script src="../js/iCheck/icheck.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var $form = $('#form_login');
+                
+                //icheck初始化
+                $('#checkbox_remember').iCheck({
+                    handle: 'checkbox',
+                    checkboxClass: 'icheckbox_square-blue'
+                }).on('ifChanged', function(e){
+                    console.log('checkbox状态：' + $('#checkbox_remember').is(':checked'));
+                });
+                
+                $form.bootstrapValidator({
+                    fields: {
+                        username: {
+                            message: '用户名验证失败',
+                            validators: {
+                                notEmpty: {
+                                    message: '用户名不能为空'
+                                }
+                            }
+                        },
+                        password: {
+                            validators: {
+                                notEmpty: {
+                                    message: '密码不能为空'
+                                }
+                            }
+                        }
+                    }
+                });
+                
+                //发布
+                $('#btn_login').click(function(){
+                    if(checkValidation()) {
+                        
+                        //提交表单数据，返回成功后，跳转到系统主页
+                        //$form.submit(function(e){});
+                        
+                        window.location.href='index.html';
+                    }
+                });
+                
+                //表单验证
+                function checkValidation() {
+                    var bsValidator = $form.data('bootstrapValidator');
+                    bsValidator.validate();
+                    var result = bsValidator.isValid();
+                    if(!result) {
+                        toastr.warning('您的登录信息填写不正确');
+                    }
+                    return result;
+                }
+                
+                
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="hisense">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <meta name="format-detection" content="telephone=no">
+        <title>1688Web</title>
+        <script type="text/javascript">
+            //移动端跳转到移动端首页
+            function browserRedirect() { 
+                var sUserAgent= navigator.userAgent.toLowerCase(); 
+                var bIsIpad= sUserAgent.match(/ipad/i) == "ipad"; 
+                var bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os"; 
+                var bIsMidp= sUserAgent.match(/midp/i) == "midp"; 
+                var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4"; 
+                var bIsUc= sUserAgent.match(/ucweb/i) == "ucweb"; 
+                var bIsAndroid= sUserAgent.match(/android/i) == "android"; 
+                var bIsCE= sUserAgent.match(/windows ce/i) == "windows ce"; 
+                var bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile"; 
+                if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) { 
+                    window.location.href= '/html/m-index.html'; 
+                }
+            } 
+            browserRedirect();
+            
+        </script>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/owl.carousel.min.css">
+        <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="main-content">
+            <div class="topbar">
+                <div class="topbar-content"><a class="logo" href="index.html"><img src="../images/logo-white.png"></a>
+                    <div class="menu" id="menu">
+                        <div class="iscroller">
+                            <div class="rootmenu"><a class="menu-btn" href="index.html">首页</a></div>
+                            <div class="rootmenu">
+                                <div class="menu-btn">招商</div>
+                                <div class="submenu">
+                                    <div class="submenu-btn">招商信息</div>
+                                    <div class="submenu-btn">招商区域</div>
+                                </div>
+                            </div>
+                            <div class="rootmenu">
+                                <div class="menu-btn">资讯</div>
+                                <div class="submenu">
+                                    <div class="submenu-btn">行业资讯</div>
+                                    <div class="submenu-btn">园区新闻</div>
+                                    <div class="submenu-btn">通知公告</div>
+                                    <div class="submenu-btn">政策法规</div>
+                                </div>
+                            </div>
+                            <div class="rootmenu">
+                                <div class="menu-btn">创业</div>
+                                <div class="submenu">
+                                    <div class="submenu-btn">创业成果</div>
+                                    <div class="submenu-btn">众创空间</div>
+                                    <div class="submenu-btn">创业辅导</div>
+                                    <div class="submenu-btn">创业导师</div>
+                                    <div class="submenu-btn">创业培训</div>
+                                    <div class="submenu-btn">创业路演</div>
+                                    <div class="submenu-btn">创业扶持</div>
+                                </div>
+                            </div>
+                            <div class="rootmenu">
+                                <div class="menu-btn">资源</div>
+                                <div class="submenu">
+                                    <div class="submenu-btn">融资服务</div>
+                                    <div class="submenu-btn">财税服务</div>
+                                    <div class="submenu-btn">人力资源</div>
+                                    <div class="submenu-btn">管理咨询</div>
+                                    <div class="submenu-btn">法律服务</div>
+                                    <div class="submenu-btn">专利服务</div>
+                                    <div class="submenu-btn">培训服务</div>
+                                </div>
+                            </div>
+                            <div class="rootmenu">
+                                <div class="menu-btn">名企</div>
+                                <div class="submenu">
+                                    <div class="submenu-btn">明星企业</div>
+                                    <div class="submenu-btn">创业领军企业</div>
+                                </div>
+                            </div>
+                            <div class="rootmenu">
+                                <div class="menu-btn">园区</div>
+                                <div class="submenu">
+                                    <div class="submenu-btn">园区配套</div>
+                                    <div class="submenu-btn">园区活动</div>
+                                    <div class="submenu-btn">园区生活</div>
+                                    <div class="submenu-btn">企业招聘</div>
+                                </div>
+                            </div>
+                            <div class="rootmenu">
+                                <div class="menu-btn">党团</div>
+                                <div class="submenu">
+                                    <div class="submenu-container">
+                                        <div class="submenu-btn">党建园地</div>
+                                        <div class="subsubmenu">
+                                            <div class="subsubmenu-btn">党员天地</div>
+                                            <div class="subsubmenu-btn">党建要闻</div>
+                                        </div>
+                                    </div>
+                                    <div class="submenu-container">
+                                        <div class="submenu-btn">工会动态</div>
+                                        <div class="subsubmenu">
+                                            <div class="subsubmenu-btn">工会快讯</div>
+                                            <div class="subsubmenu-btn">热点聚焦</div>
+                                        </div>
+                                    </div>
+                                    <div class="submenu-container">
+                                        <div class="submenu-btn">团员聚焦</div>
+                                        <div class="subsubmenu">
+                                            <div class="subsubmenu-btn">团员天地</div>
+                                            <div class="subsubmenu-btn">基层团讯</div>
+                                            <div class="subsubmenu-btn">青春风采</div>
+                                        </div>
+                                    </div>
+                                    <div class="submenu-container">
+                                        <div class="submenu-btn">学习交流</div>
+                                        <div class="subsubmenu">
+                                            <div class="subsubmenu-btn">时事热点</div>
+                                            <div class="subsubmenu-btn">先锋故事</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rootmenu">
+                                <div class="menu-btn sel">关于</div>
+                                <div class="submenu"><a class="submenu-btn" href="about.html?tab=tab_1">园区简介</a><a class="submenu-btn" href="about.html?tab=tab_2">组织架构</a><a class="submenu-btn" href="about.html?tab=tab_3">大事记</a><a class="submenu-btn" href="about.html?tab=tab_4">园区规划</a><a class="submenu-btn" href="about.html?tab=tab_5">园区文化</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-area">
+                        <div class="btn user-area-btn login" id="btn_login">登录</div>
+                        <div class="btn user-area-btn regist" id="btn_regist">注册</div>
+                    </div>
+                    <div class="mbtn touch-active" id="mbtn"><i class="fa fa-navicon"></i></div>
+                </div>
+            </div>
+            <div class="body-mask"></div>
+            <div class="main-body">
+                <div class="topbar-space"></div>
+                <div class="banner"><img src="../images/banner-about.jpg">
+                    <div class="banner-title-content">
+                        <div class="container">
+                            <div class="banner-title">关于我们</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-space-0">
+                    <div class="container tp-container">
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <ul class="nav nav-tabs tp-tab">
+                                    <li class="active"><a href="#tab_1" role="tab" data-toggle="tab">园区简介</a></li>
+                                    <li><a href="#tab_2" role="tab" data-toggle="tab">组织架构</a></li>
+                                    <li><a href="#tab_3" role="tab" data-toggle="tab">大事记</a></li>
+                                    <li><a href="#tab_4" role="tab" data-toggle="tab">园区规划</a></li>
+                                    <li><a href="#tab_5" role="tab" data-toggle="tab">园区文化</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-10">
+                                <div class="tab-content">
+                                    <div class="tp-content tab-pane active" id="tab_1" role="tabpanel">
+                                        <div class="deco-box"></div>
+                                        <div class="tp-content-title">园区简介
+                                            <div class="tp-content-title-deco">中艺1688<br>SHANDONG ARTEX</div>
+                                        </div>
+                                        <div class="tp-content-inner" id="tab_content_1"></div>
+                                    </div>
+                                    <div class="tp-content tab-pane" id="tab_2" role="tabpanel">
+                                        <div class="deco-box"></div>
+                                        <div class="tp-content-title">组织架构
+                                            <div class="tp-content-title-deco">中艺1688<br>SHANDONG ARTEX</div>
+                                        </div>
+                                        <div class="tp-content-inner" id="tab_content_2"></div>
+                                    </div>
+                                    <div class="tp-content tab-pane" id="tab_3" role="tabpanel">
+                                        <div class="deco-box"></div>
+                                        <div class="tp-content-title">大事记
+                                            <div class="tp-content-title-deco">中艺1688<br>SHANDONG ARTEX</div>
+                                        </div>
+                                        <div class="tp-content-inner" id="tab_content_3"></div>
+                                    </div>
+                                    <div class="tp-content tab-pane" id="tab_4" role="tabpanel">
+                                        <div class="deco-box"></div>
+                                        <div class="tp-content-title">园区规划
+                                            <div class="tp-content-title-deco">中艺1688<br>SHANDONG ARTEX</div>
+                                        </div>
+                                        <div class="tp-content-inner" id="tab_content_4"></div>
+                                    </div>
+                                    <div class="tp-content tab-pane" id="tab_5" role="tabpanel">
+                                        <div class="deco-box"></div>
+                                        <div class="tp-content-title">园区文化
+                                            <div class="tp-content-title-deco">中艺1688<br>SHANDONG ARTEX</div>
+                                        </div>
+                                        <div class="tp-content-inner" id="tab_content_5"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 mobile-hidden">
+                                <div class="pull-left">
+                                    <div class="phone"><i class="fa fa-phone-square"></i>&nbsp;0532-81931688</div>
+                                    <div class="address">地址:中国青岛李沧区黑龙江中路398号</div>
+                                    <div class="address">传真:+86-532-87665578</div>
+                                </div>
+                                <div class="pull-left contact-icons">
+                                    <div class="link-icon"><i class="fa fa-weibo"></i></div>
+                                    <div class="link-icon"><i class="fa fa-weixin"></i>
+                                        <div class="link-icon-qrcode-pop">
+                                            <div class="imgbox"><img src="../images/qrcode.png"></div>
+                                        </div>
+                                    </div>
+                                    <div class="link-icon"><i class="fa fa-qq"></i>
+                                        <div class="link-icon-qrcode-pop">
+                                            <div class="imgbox"><img src="../images/qrcode.png"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pull-right">
+                                    <div class="logos">
+                                        <div class="logo"><img src="../images/logo-white.png"></div>
+                                        <div class="logo"><img src="../images/logo-wuye.png"></div>
+                                    </div>
+                                    <div class="btn-join"><span>友情链接</span>
+                                        <div class="flinks"><a href="javascript:;">中艺官方网站</a><a href="javascript:;">中国软件行业协会官方网站</a><a href="javascript:;">山东人力资源官网</a><a href="javascript:;">青岛政务网</a><a href="javascript:;">青岛崂山创新园官方网站</a><a href="javascript:;">青岛海尔云谷官方网站</a><a href="javascript:;">青岛市南软件园官方网站</a><a href="javascript:;">青岛湛山创意工厂官方网站</a><a href="javascript:;">中艺官方网站</a><a href="javascript:;">中国软件行业协会官方网站</a><a href="javascript:;">山东人力资源官网</a><a href="javascript:;">青岛政务网</a><a href="javascript:;">青岛崂山创新园官方网站</a><a href="javascript:;">青岛海尔云谷官方网站</a><a href="javascript:;">青岛市南软件园官方网站</a><a href="javascript:;">青岛湛山创意工厂官方网站</a></div>
+                                        <div class="flink-arrow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="links mobile-hidden"></div>
+                                <div class="coypright">
+                                     &nbsp;版权所有：中艺1688创意产业园&nbsp;<br class="mobile-visible">Copyright ©2012-2017 All Rights Reserved Zhongyi Design Co.,ltd&nbsp;&nbsp;站点统计：<a href="https://web.umeng.com/demo.php" target="_blank"><img src="../images/cnzz.png" style="margin-top:-2px;"></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <div class="sidebar-logo"></div>
+                    <div class="sidebar-title">
+                         快捷导航
+                        <div class="sidebar-title-deco"></div>
+                    </div><a class="sidebar-btn sbbtn-1" href="javascript:;"><i class="fa fa-sign-in"></i>&nbsp;申请入驻</a><a class="sidebar-btn sbbtn-2" href="javascript:;"> <i class="fa fa-cutlery"></i>&nbsp;美食广场</a><a class="sidebar-btn sbbtn-3" href="javascript:;"> <i class="fa fa-building"></i>&nbsp;物业申请</a><a class="sidebar-btn sbbtn-4" href="javascript:;"> <i class="fa fa-bank"></i>&nbsp;展厅申请</a><a class="sidebar-btn sbbtn-5" href="javascript:;"> <i class="fa fa-car"></i>&nbsp;智慧停车</a><a class="sidebar-btn sbbtn-6" href="javascript:;"> <i class="fa fa-commenting"></i>&nbsp;企业诉求</a>
+                    <div class="sidebar-btn sbbtn-7" id="btn_totop"><i class="fa fa-arrow-up"></i>&nbsp;返回顶端</div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/iscroll.js"></script>
+        <script src="../js/owl.carousel.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                /*
+                $('#btn_login').click(function(){
+                    BSModal.confirm({
+                        title: "登录",
+                        content: "登录表单",
+                        modalClass: 'modal-login',
+                        hasFooter: false
+                    }).on(function (e) {
+                        if (!e) {
+                            return;
+                        }
+                    });
+                });*/
+                
+                //根据url参数切换tab页
+                var ur=location.href;
+                var tab=ur.split('?')[1].split("=")[1];
+                switch (tab){
+                    case 'tab_1':
+                        $('.tp-tab a[href="#tab_1"]').tab('show')
+                        break;
+                    case 'tab_2':
+                        $('.tp-tab a[href="#tab_2"]').tab('show')
+                        break;
+                    case 'tab_3':
+                        $('.tp-tab a[href="#tab_3"]').tab('show')
+                        break;
+                    case 'tab_4':
+                        $('.tp-tab a[href="#tab_4"]').tab('show')
+                        break;
+                    case 'tab_5':
+                        $('.tp-tab a[href="#tab_5"]').tab('show')
+                        break;
+                } 
+                
+                $('#tab_content_1').html('<p style="padding: 0px; font-size: 13px; margin-bottom: 0px; font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">中艺1688定位为金融和中小企业办公总部产业园，园区围绕设计、交流、传播三个运营核心，集文化展示、总部办公、商务休闲于一体；复合科技研发、创意文化、创新服务、金融商务等产业；园区汇聚商务办公、文化交流、秀场展览、餐饮娱乐、特色休闲、互动空间多元业态，全力打造“一园三区四板块”新式园区。</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px; font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">中艺1688创意产业园区别于传统文化主题产业园，倡导以绿色化、高端化为方向，在中国抽纱山东进出口公司第二整理加工厂原址进行了全面的修复和再建工程。在建筑设计中，以现代构成主义风格为主导，运用优越的空间，营造出层次丰富的场地新格局。</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px; font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><img src="http://www.qdzy1688.com/uploadfile/201503/20150317112312351.jpg" style="width: 100%;"><br></p>')
+                
+                $('#tab_content_2').html('<p><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(122, 121, 120); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial; font-size: 14px;">中国工艺（集团）公司是由国务院国有资产监督管理委员会直接管理的中央企业，中国进出口额最大的500家企业之一。</span></p><p style="padding: 0px; font-size: 12px; margin-bottom: 0px; color: rgb(122, 121, 120); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 14px;">2007年2月，在国家大力推进中央企业布局结构调整，国务院国有资产监督管理委员会对中央文化企业布局调整的大背景下，由原中国工艺品进出口总公司和中国工艺美术（集团）公司两家中央企业联合重组成立。</span></p><p style="padding: 0px; font-size: 12px; margin-bottom: 0px; color: rgb(122, 121, 120); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><br></p><p style="padding: 0px; font-size: 12px; margin-bottom: 0px; color: rgb(122, 121, 120); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 14px;">中国工艺山东抽纱有限公司（原中国抽纱山东进出口公司），是中国工艺集团在山东的子公司，成立于1983年，是经营家居用品、抽纱品、工艺品、自主服装品牌的进出口企业。公司注册资本7490万元，经过艰苦创业，开拓进取的发展历程，目前已拥有三家进出口分公司、一家直属企业。</span></p><p style="padding: 0px; font-size: 12px; margin-bottom: 0px; color: rgb(122, 121, 120); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><br></p><p style="padding: 0px; font-size: 12px; margin-bottom: 0px; color: rgb(122, 121, 120); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 14px;">青岛嘉瑞德物业管理服务有限公司成立于2013年6月，是中国工艺山东抽纱有限公司（原中国抽纱山东进出口公司）的全资子公司，国家三级资质物业管理企业。现有管理服务及专业技术人员60余人，托管总面积达到10多万平米，目前主要对青岛1688创意产业园项目进行服务管理。公司秉承“用心服务、全力以赴、至善至美、精益求精、微笑您好、享受亲情”的服务理念和“客户至上、服务第一”的企业服务宗旨，为客户提供优质的物业管理服务，创造高品质的生活空间。</span><br></p><p><span style="color: rgb(128, 128, 128); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial; font-size: 13px; text-align: justify;"><br></span><span style="color: rgb(128, 128, 128); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial; font-size: 13px; text-align: justify;"><br></span><span style="color: rgb(122, 121, 120); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial; font-size: 14px;"><br></span></p><p><br></p>');
+                
+                $('#tab_content_3').html('<p style="padding: 0px; font-size: 13px; margin-bottom: 0px; font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■ 1983年1月1日，中国工艺品进出口公司山东抽纱分公司创立；</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px; font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■ 1990年12月29日，由国务院企业管理指导委员会审定为“国家二级企业”；</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px; font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■ 1992年5月30日，公司更名为“中国抽纱山东进出口公司”；</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px; font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■ 1993年，公司举办十年大庆，爱新觉罗•溥杰挥词祝贺；</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px; font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■ 1997年，公司实现了内部计算机数据联网及与INTERNET联网；</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px; font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■ 2012年，中艺1688创意产业园项目开始启动；</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px; font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■ 2013年，被评为“青岛市文化创意产业协会副会长单位”；</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px; font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■ 2014年，被评为“青岛科技企业孵化器”；</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px; font-family: &quot;Lucida Grande&quot;, Helvetica, Arial;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■ 2014年，被评为“青岛市小企业创业（孵化）基地”；</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■ 2014年，被评为“青岛市网商协会理事单位”；</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■ 2015年，原“中国抽纱山东进出口公司第二整理加工厂”正式更名为“山东中艺文化创意产业园发展有限公司”；</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■2015年，被评为“青岛市特色楼宇”称号；</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■2016年，“青岛市跨境电商孵化基地”入驻园区；</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■2016年，被评为“青岛创业孵化基地”；</span></font></p><p style="padding: 0px; font-size: 13px; margin-bottom: 0px;"><font style="margin-top: 30px; font-size: 12px; margin-left: 15px; color: rgb(122, 121, 120); line-height: 24px;"><span style="font-size: 14px;">■2016年，</span><span style="font-size: 0.14rem;">中国抽纱山东进出口公司正式更名为“中国工艺山东有限公司”。</span></font></p>');
+                
+                $('#tab_content_4').html('<p>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(122, 121, 120); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial; font-size: 14px;">中艺1688项目总占地面积约80000平方米，规划总建筑约100000平方米，绿化率16%，分为一期和二期建设。项目规划为一园三区四板块，建成后分为三个功能区块。</span></p><p>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 128, 128); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial; font-size: 13px; text-align: justify;">总部集聚区：以金融中介机构、都市工业总部、智慧电子商务三板块为主体。全球知名企业机构入驻，承担战略规划、技术研发和对外商贸功能。</span></p><p>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 128, 128); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial; font-size: 13px; text-align: justify;">商务服务区：以文化休闲创意为主体。集中艺产品展示中心、中艺特色商业中心、中艺广场于一体，为专业人才及广大市民提供商务配套服务和知识推广。</span></p><p>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 128, 128); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial; font-size: 13px; text-align: justify;">科技孵化区：建立专门为总部集聚区输送人才和企业的创业摇篮、文化产业研究中心实践基地等，与高校合作，促进“产、学、研”共同发展。</span></p><p><img src="http://www.qdzy1688.com/uploadfile/201503/20150317112827236.jpg" style="width: 100%;"><span style="color: rgb(128, 128, 128); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial; font-size: 13px; text-align: justify;"><br></span><span style="color: rgb(128, 128, 128); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial; font-size: 13px; text-align: justify;"><br></span><span style="color: rgb(128, 128, 128); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial; font-size: 13px; text-align: justify;"><br></span><span style="color: rgb(122, 121, 120); font-family: &quot;Lucida Grande&quot;, Helvetica, Arial; font-size: 14px;"><br></span></p><p><br></p>');
+                
+                $('#tab_content_5').html('<img src="http://www.qdzy1688.com/uploadfile/201207/20120722164455764.jpg" style="width:100%;"><br><img src="http://www.qdzy1688.com/uploadfile/201208/20120808151324780.jpg" style="width:100%">');
+                
+            });
+        </script>
+    </body>
+</html>

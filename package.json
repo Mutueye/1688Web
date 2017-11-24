@@ -1,0 +1,19 @@
+{
+  "name": "express-static",
+  "version": "1.0.0",
+  "description": "express static server",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "express",
+    "static"
+  ],
+  "author": "Peng Du",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.15.3"
+  }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-table.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/fileinput.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/theme.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">
+                         企业沙龙报名统计<a class="btn btn-sm btn-theme pull-right" href="chuangye-salon.html"><i class="fa fa-undo"></i>&nbsp;返回</a></div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group cool-form-group form-group-sm">
+                        <div class="cool-form-label text-right control-label">企业沙龙主题：</div>
+                        <div class="cool-form-content">React 16 正式发布，提供全新异常处理机制</div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <table id="table"></table>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/moment/moment.min.js"></script>
+        <script src="../js/moment/zh-cn.js"></script>
+        <script src="../js/bootstrap-datetimepicker.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-export.min.js"></script>
+        <script src="../js/tableExport.min.js"></script>
+        <script src="../js/bootstrap-fileinput/fileinput.min.js"></script>
+        <script src="../js/bootstrap-fileinput/zh.js"></script>
+        <script src="../js/bootstrap-fileinput/theme.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                var $table = $('#table');
+                
+                $table.bootstrapTable({
+                    showColumns : true,
+                    showToggle : true,
+                    showExport : true,
+                    pagination : true,
+                    showPaginationSwitch : false,
+                    columns: [
+                        {
+                            field: 'id',
+                            title: '序号',
+                            sortable: true,
+                            halign: 'center',
+                            align: 'right',
+                            width: 30
+                        }, 
+                        {
+                            field: 'name',
+                            title: '参加人姓名',
+                            halign: 'center'
+                        },
+                        {
+                            field: 'contact',
+                            title: '联系方式',
+                            halign: 'center'
+                        },
+                        {
+                            field: 'company',
+                            title: '公司名称',
+                            halign: 'center'
+                        }, 
+                        {
+                            field: 'extra',
+                            title: '备注',
+                            halign: 'center'
+                        }
+                    ],
+                    data: [
+                        {
+                            id : 1,
+                            name : '王中举',
+                            contact : '13812345678',
+                            company : '企业1',
+                            extra : '无'
+                        },
+                        {
+                            id : 2,
+                            name : '柳下惠',
+                            contact : '13812345678',
+                            company : '企业2',
+                            extra : '无'
+                        },
+                        {
+                            id : 3,
+                            name : '慕容博',
+                            contact : '13812345678',
+                            company : '企业3',
+                            extra : '无'
+                        }
+                    ]
+                });
+                
+            });
+        </script>
+    </body>
+</html>

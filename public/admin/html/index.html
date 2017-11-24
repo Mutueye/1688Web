@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="topbar main-topbar">
+            <div class="logo"><img src="../images/logo-white.png"><span>双创智慧园区后台管理系统</span></div>
+            <div class="right-shoulder">
+                <div class="pull-left"><a class="btn btn-large btn-topbar" href="../../html/index.html" target="_blank"><i class="fa fa-home"></i>&nbsp;门户首页</a></div>
+                <div class="dropdown pull-left">
+                    <div class="btn btn-large btn-topbar" id="topbar_menu_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-user-circle-o"></i>&nbsp;Admin&nbsp;<i class="fa fa-angle-down"></i></div>
+                    <ul class="popmenu-box popbox-content dropdown-menu" aria-labelledby="dm_dropdown">
+                        <li><a class="btn btn-popmenu" href="index-oa.html#oa-personal-info.html" target="_blank"><i class="fa fa-user-circle-o"></i>&nbsp;个人信息</a></li>
+                        <li><a class="btn btn-popmenu" href="login.html"> <i class="fa fa-sign-out"></i>&nbsp;退出登录</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="topbar-space"></div>
+        <div class="container row-space-common">
+            <div class="row top-row">
+                <div class="col-sm-12 col-md-8">
+                    <div class="row-space-10">
+                        <div class="row no-bottom">
+                            <div class="col-xs-4"><a class="sl-btn touch-active" href="index-merchant.html#merchant.html" target="_blank">
+                                    <div class="sl-btn-icon"><i class="fa fa-handshake-o"></i></div>
+                                    <div class="sl-btn-title">招商管理</div></a></div>
+                            <div class="col-xs-4"><a class="sl-btn touch-active" href="index-chuangye.html#chuangye.html" target="_blank">
+                                    <div class="sl-btn-icon"><i class="fa fa-flag-o"></i></div>
+                                    <div class="sl-btn-title">创业孵化</div></a></div>
+                            <div class="col-xs-4"><a class="sl-btn touch-active" href="index-resource.html#resource.html" target="_blank">
+                                    <div class="sl-btn-icon"><i class="fa fa-database"></i></div>
+                                    <div class="sl-btn-title">资源服务</div></a></div>
+                            <div class="col-xs-4"><a class="sl-btn touch-active" href="index-operate.html#operate.html" target="_blank">
+                                    <div class="sl-btn-icon"><i class="fa fa-line-chart"></i></div>
+                                    <div class="sl-btn-title">运营管理</div></a></div>
+                            <div class="col-xs-4"><a class="sl-btn touch-active" href="index-oa.html#oa.html" target="_blank">
+                                    <div class="sl-btn-icon"><i class="fa fa-print"></i></div>
+                                    <div class="sl-btn-title">协同办公</div></a></div>
+                            <div class="col-xs-4"><a class="sl-btn touch-active" href="index-estate.html#estate.html" target="_blank">
+                                    <div class="sl-btn-icon"><i class="fa fa-building-o"></i></div>
+                                    <div class="sl-btn-title">物业管理</div></a></div>
+                            <div class="col-xs-4"><a class="sl-btn touch-active" href="index-party.html#party.html" target="_blank">
+                                    <div class="sl-btn-icon"><i class="fa fa-star-o"></i></div>
+                                    <div class="sl-btn-title">党团管理</div></a></div>
+                            <div class="col-xs-4"><a class="sl-btn touch-active" href="index-platform.html#platform.html" target="_blank">
+                                    <div class="sl-btn-icon"><i class="fa fa-desktop"></i></div>
+                                    <div class="sl-btn-title">信息化平台</div></a></div>
+                            <div class="col-xs-4"><a class="sl-btn touch-active" href="index-sys.html#sys.html" target="_blank">
+                                    <div class="sl-btn-icon"><i class="fa fa-cogs"></i></div>
+                                    <div class="sl-btn-title">系统管理</div></a></div>
+                        </div>
+                    </div>
+                    <div class="block-title no-bottom mt-space">
+                        <div class="block-title-head">
+                             待办事项
+                            <div class="block-title-head-deco"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ul class="nav nav-tabs todo-tabs">
+                                <li class="active"><a href="#todo_1" role="tab" data-toggle="tab">紧急事项</a></li>
+                                <li><a href="#todo_2" role="tab" data-toggle="tab">新增事项</a></li>
+                                <li><a href="#todo_3" role="tab" data-toggle="tab">进行中事项</a></li>
+                                <li><a href="#todo_4" role="tab" data-toggle="tab">已完成事项</a></li>
+                                <li><a href="#todo_5" role="tab" data-toggle="tab">空白列表示例</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="todo_1" role="tabpanel">
+                                    <ul class="todo">
+                                        <li class="todo-alert">
+                                            <div class="todo-icon"><i class="fa fa-exclamation"></i></div>
+                                            <div class="todo-title">紧急：培训审批
+                                                <div class="todo-time">09.07</div>
+                                            </div>
+                                            <div class="todo-text">办公协同-人力资源-培训-总经理审批：2017年中团队执行力培训活动待审批</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">立即执行&nbsp;<i class="fa fa-angle-right"></i></a></div>
+                                        </li>
+                                        <li class="todo-alert">
+                                            <div class="todo-icon"><i class="fa fa-exclamation"></i></div>
+                                            <div class="todo-title">紧急：租赁合同审批
+                                                <div class="todo-time">09.07</div>
+                                            </div>
+                                            <div class="todo-text">办公协同-人力资源-培训-总经理审批：2017年中团队执行力培训活动待审批</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">立即执行&nbsp;<i class="fa fa-angle-right"></i></a></div>
+                                        </li>
+                                        <li class="todo-alert">
+                                            <div class="todo-icon"><i class="fa fa-exclamation"></i></div>
+                                            <div class="todo-title">紧急：用印申请审批
+                                                <div class="todo-time">09.07</div>
+                                            </div>
+                                            <div class="todo-text">办公协同-人力资源-培训-总经理审批：2017年中团队执行力培训活动待审批</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">立即执行&nbsp;<i class="fa fa-angle-right"></i></a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane" id="todo_2" role="tabpanel">
+                                    <ul class="todo">
+                                        <li class="todo-new">
+                                            <div class="todo-icon"><i class="fa fa-plus"></i></div>
+                                            <div class="todo-title">新增：路演项目审核
+                                                <div class="todo-time">09.15</div>
+                                            </div>
+                                            <div class="todo-text">创业孵化-创业路演-创业路演审核：帕克智能停车创业项目路演</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">开始处理&nbsp;<i class="fa fa-angle-right"></i></a></div>
+                                        </li>
+                                        <li class="todo-new">
+                                            <div class="todo-icon"><i class="fa fa-plus"></i></div>
+                                            <div class="todo-title">新增：路演项目审核
+                                                <div class="todo-time">09.07</div>
+                                            </div>
+                                            <div class="todo-text">党政管理-工会活动-工会活动编辑：关于2017中秋节晚会筹办组委会成员名单及任务分配的通知</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">开始处理&nbsp;<i class="fa fa-angle-right"></i></a></div>
+                                        </li>
+                                        <li class="todo-new">
+                                            <div class="todo-icon"><i class="fa fa-plus"></i></div>
+                                            <div class="todo-title">新增：路演项目审核
+                                                <div class="todo-time">09.07</div>
+                                            </div>
+                                            <div class="todo-text">物业管理-仓库-采购申请：单号：84001251，产品名称：45W节能灯，采购数量：200</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">开始处理&nbsp;<i class="fa fa-angle-right"></i></a></div>
+                                        </li>
+                                        <li class="todo-new">
+                                            <div class="todo-icon"><i class="fa fa-plus"></i></div>
+                                            <div class="todo-title">新增：路演项目审核
+                                                <div class="todo-time">09.15</div>
+                                            </div>
+                                            <div class="todo-text">创业孵化-创业路演-创业路演审核：帕克智能停车创业项目路演</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">开始处理&nbsp;<i class="fa fa-angle-right"></i></a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane" id="todo_3" role="tabpanel">
+                                    <ul class="todo">
+                                        <li class="todo-current">
+                                            <div class="todo-icon"><i class="fa fa-arrow-right"></i></div>
+                                            <div class="todo-title">进行中：工会活动编辑
+                                                <div class="todo-time">09.07</div>
+                                            </div>
+                                            <div class="todo-text">党政管理-工会活动-工会活动编辑：关于2017中秋节晚会筹办组委会成员名单及任务分配的通知</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">继续处理&nbsp;<i class="fa fa-angle-right"></i></a></div>
+                                        </li>
+                                        <li class="todo-current">
+                                            <div class="todo-icon"><i class="fa fa-arrow-right"></i></div>
+                                            <div class="todo-title">进行中：路演项目审核
+                                                <div class="todo-time">09.15</div>
+                                            </div>
+                                            <div class="todo-text">创业孵化-创业路演-创业路演审核：帕克智能停车创业项目路演</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">继续处理&nbsp;<i class="fa fa-angle-right"></i></a></div>
+                                        </li>
+                                        <li class="todo-current">
+                                            <div class="todo-icon"><i class="fa fa-arrow-right"></i></div>
+                                            <div class="todo-title">进行中：采购申请审批通过
+                                                <div class="todo-time">09.07</div>
+                                            </div>
+                                            <div class="todo-text">物业管理-仓库-采购申请：单号：84001251，产品名称：45W节能灯，采购数量：200</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">继续处理&nbsp;<i class="fa fa-angle-right"></i></a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane" id="todo_4" role="tabpanel">
+                                    <ul class="todo">
+                                        <li class="todo-finished">
+                                            <div class="todo-icon"><i class="fa fa-check"></i></div>
+                                            <div class="todo-title">已完成：路演项目审核
+                                                <div class="todo-time">09.15</div>
+                                            </div>
+                                            <div class="todo-text">创业孵化-创业路演-创业路演审核：帕克智能停车创业项目路演</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">确认完成</a></div>
+                                        </li>
+                                        <li class="todo-finished">
+                                            <div class="todo-icon"><i class="fa fa-check"></i></div>
+                                            <div class="todo-title">已完成：工会活动编辑
+                                                <div class="todo-time">09.07</div>
+                                            </div>
+                                            <div class="todo-text">党政管理-工会活动-工会活动编辑：关于2017中秋节晚会筹办组委会成员名单及任务分配的通知</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">确认完成</a></div>
+                                        </li>
+                                        <li class="todo-finished">
+                                            <div class="todo-icon"><i class="fa fa-check"></i></div>
+                                            <div class="todo-title">已完成：采购申请审批通过
+                                                <div class="todo-time">09.07</div>
+                                            </div>
+                                            <div class="todo-text">物业管理-仓库-采购申请：单号：84001251，产品名称：45W节能灯，采购数量：200</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">确认完成</a></div>
+                                        </li>
+                                        <li class="todo-finished">
+                                            <div class="todo-icon"><i class="fa fa-check"></i></div>
+                                            <div class="todo-title">已完成：路演项目审核
+                                                <div class="todo-time">09.15</div>
+                                            </div>
+                                            <div class="todo-text">创业孵化-创业路演-创业路演审核：帕克智能停车创业项目路演</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">确认完成</a></div>
+                                        </li>
+                                        <li class="todo-finished">
+                                            <div class="todo-icon"><i class="fa fa-check"></i></div>
+                                            <div class="todo-title">已完成：工会活动编辑
+                                                <div class="todo-time">09.07</div>
+                                            </div>
+                                            <div class="todo-text">党政管理-工会活动-工会活动编辑：关于2017中秋节晚会筹办组委会成员名单及任务分配的通知</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">确认完成</a></div>
+                                        </li>
+                                        <li class="todo-finished">
+                                            <div class="todo-icon"><i class="fa fa-check"></i></div>
+                                            <div class="todo-title">已完成：采购申请审批通过
+                                                <div class="todo-time">09.07</div>
+                                            </div>
+                                            <div class="todo-text">物业管理-仓库-采购申请：单号：84001251，产品名称：45W节能灯，采购数量：200</div>
+                                            <div class="pull-right"><a class="btn btn-sm btn-capsule todo-btn" href="#">确认完成</a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane" id="todo_5" role="tabpanel">
+                                    <div class="todo-empty"> <i class="fa fa-inbox"></i><br>您的（紧急/新增/进行中/已完成）事项为空</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="block-title type2">
+                        <div class="block-title-head">
+                             通知公告
+                            <div class="block-title-head-deco"></div>
+                        </div><a class="block-title-shoulder" href="javascript:;">更多</a>
+                    </div>
+                    <ul class="news-list underline-list dot-list with-date vertical-match">
+                        <li><a class="touch-active" href="#" target="_blank">印尼将出动军队打击毒品犯罪印尼将出动军队打击毒品犯罪</a>
+                            <div class="date">06.23</div>
+                        </li>
+                        <li><a class="touch-active" href="#" target="_blank">官方称翻越澳门大学新校区围墙属偷渡行为</a>
+                            <div class="date">06.21</div>
+                        </li>
+                        <li><a class="touch-active" href="#" target="_blank">哪家公司提供的网站建设服务比较好？</a>
+                            <div class="date">06.20</div>
+                        </li>
+                        <li><a class="touch-active" href="#" target="_blank">中国进出口银行广东省分行牵头银团与印尼广青镍业签订贷款协议</a>
+                            <div class="date">06.18</div>
+                        </li>
+                        <li><a class="touch-active" href="#" target="_blank">韩副外长将出席印尼世界经济论坛 介绍韩方立场</a>
+                            <div class="date">06.14</div>
+                        </li>
+                    </ul>
+                    <div class="block-title no-bottom type2 mt-space">
+                        <div class="block-title-head">
+                             园区企业分布
+                            <div class="block-title-head-deco"></div>
+                        </div>
+                    </div>
+                    <div class="abs-container abs-hp-1of2">
+                        <div class="abs-content">
+                            <div class="bg-gray-f5" id="chart01" style="width:100%;height:100%;"></div>
+                        </div>
+                    </div>
+                    <div class="block-title no-bottom type2 mt-space">
+                        <div class="block-title-head">
+                             园区行业分布
+                            <div class="block-title-head-deco"></div>
+                        </div>
+                    </div>
+                    <div class="abs-container abs-hp-1of2">
+                        <div class="abs-content">
+                            <div class="bg-gray-f5" id="chart02" style="width:100%;height:100%;"> </div>
+                        </div>
+                    </div>
+                    <div class="block-title no-bottom type2 mt-space">
+                        <div class="block-title-head">
+                             园区面积分布
+                            <div class="block-title-head-deco"></div>
+                        </div>
+                    </div>
+                    <div class="abs-container abs-hp-1of2">
+                        <div class="abs-content"><img src="../images/map.jpg" style="width:100%;height:100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">版权所有：中艺1688创意产业园 Copyright ©2012-2017 All Rights Reserved Zhongyi Design Co.,ltd</div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/highcharts.js"></script>
+        <script src="../js/highcharts-zh_CN.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#chart01').highcharts({
+                    chart: {
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false,
+                        backgroundColor: '#F5F5F5'
+                    },
+                    title: false,
+                    tooltip: {
+                        headerFormat: '{series.name}<br>',
+                        pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                style: {
+                                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                }
+                            }
+                        }
+                    },
+                    series: [{
+                        type: 'pie',
+                        name: '企业类型占比',
+                        data: [
+                            ['私营企业', 45.0],
+                            ['中外合资企业',26.8],
+                            ['国有企业',12.8],
+                            ['集体企业',8.5],
+                            ['股份制企业',6.2],
+                            ['其他',0.7]
+                        ]
+                    }]
+                });
+                
+                $('#chart02').highcharts({
+                    chart: {
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false,
+                        backgroundColor: '#F5F5F5'
+                    },
+                    title: false,
+                    tooltip: {
+                        headerFormat: '{series.name}<br>',
+                        pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                style: {
+                                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                }
+                            }
+                        }
+                    },
+                    series: [{
+                        type: 'pie',
+                        name: '企业行业占比',
+                        innerSize : '70%',
+                        data: [
+                            ['计算机', 25.0],
+                            ['工业',26.8],
+                            ['农业',22.8],
+                            ['金融',18.5],
+                            ['科研',6.2],
+                            ['其他',0.7]
+                        ]
+                    }]
+                });
+                
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-table.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/fileinput.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/theme.min.css">
+        <link rel="stylesheet" href="../js/iCheck/skins/square/_all.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">企业招聘发布<a class="btn btn-sm btn-theme pull-right" href="operate-recruit.html"><i class="fa fa-undo"></i>&nbsp;返回</a></div>
+                </div>
+                <div class="col-xs-12 row-space-10">
+                    <form class="row no-bottom" id="form" name="form">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>职位名称：</div>
+                                <input class="form-control" id="post" type="text" name="post">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>公司名称：</div>
+                                <input class="form-control" id="orgname" type="text" name="orgname">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>工作地点：</div>
+                                <input class="form-control" id="location" type="text" name="location">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>薪资：</div>
+                                <div class="input-group">
+                                    <input class="form-control" id="salary" type="text" name="salary">
+                                    <div class="input-group-addon">元</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">企业性质：</div>
+                                <select class="form-control" id="company_spec">
+                                    <option>国有企业</option>
+                                    <option>私有股份制</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">公司人数：</div>
+                                <select class="form-control" id="company_num">
+                                    <option>50人以内</option>
+                                    <option>50人~100人</option>
+                                    <option>100人~200人</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">行业：</div>
+                                <select class="form-control" id="industry">
+                                    <option>互联网</option>
+                                    <option>大数据</option>
+                                    <option>餐饮</option>
+                                    <option>其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">工作年限：</div>
+                                <select class="form-control" id="work_time">
+                                    <option>毕业生</option>
+                                    <option>3年以内</option>
+                                    <option>3年到6年</option>
+                                    <option>6年以上</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">福利：</div>
+                                <div class="cool-form-content icheck-label" id="check_list">
+                                    <label>
+                                        <input class="fuli_check" type="checkbox">
+                                        <div class="icheck-text">五险一金</div>
+                                    </label>
+                                    <label>
+                                        <input class="fuli_check" type="checkbox">
+                                        <div class="icheck-text">医疗保险</div>
+                                    </label>
+                                    <label>
+                                        <input class="fuli_check" type="checkbox">
+                                        <div class="icheck-text">公积金</div>
+                                    </label>
+                                    <label>
+                                        <input class="fuli_check" type="checkbox">
+                                        <div class="icheck-text">专业培训</div>
+                                    </label>
+                                    <label>
+                                        <input class="fuli_check" type="checkbox">
+                                        <div class="icheck-text">员工旅游</div>
+                                    </label>
+                                    <label>
+                                        <input class="fuli_check" type="checkbox">
+                                        <div class="icheck-text">年终奖金</div>
+                                    </label>
+                                    <label>
+                                        <input class="fuli_check" type="checkbox">
+                                        <div class="icheck-text">绩效奖金</div>
+                                    </label>
+                                    <label>
+                                        <input class="fuli_check" type="checkbox">
+                                        <div class="icheck-text">股票期权</div>
+                                    </label>
+                                </div>
+                                <div class="cool-form-content">
+                                    <div class="btn btn-line btn-sm" id="check_all">全选</div>
+                                    <div class="btn btn-line btn-sm" id="uncheck_all">全不选</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>联系方式：</div>
+                                <input class="form-control" id="contact" type="text" name="contact">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>电子邮箱：</div>
+                                <input class="form-control" id="email" type="text" name="email">
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>地址：</div>
+                                <input class="form-control" id="address" type="text" name="address">
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>职位描述：</div>
+                                <textarea class="form-control textarea" id="intro" rows="5" name="intro"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>公司介绍：</div>
+                                <textarea class="form-control textarea" id="intro2" rows="5" name="intro2"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="btn btn-large btn-theme" id="btn_publish"><i class="fa fa-upload"></i>&nbsp;发布</div>
+                            <div class="btn btn-large btn-theme" id="btn_preview"><i class="fa fa-eye"></i>&nbsp;预览</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/moment/moment.min.js"></script>
+        <script src="../js/moment/zh-cn.js"></script>
+        <script src="../js/bootstrap-datetimepicker.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+        <script src="../js/bootstrap-fileinput/fileinput.min.js"></script>
+        <script src="../js/bootstrap-fileinput/zh.js"></script>
+        <script src="../js/bootstrap-fileinput/theme.min.js"></script>
+        <script src="../js/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="../js/bootstrapvalidator/zh_CN.js"></script>
+        <script src="../js/iCheck/icheck.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/operate-recruit-new.js"></script>
+    </body>
+</html>

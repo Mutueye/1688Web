@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-table.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/fileinput.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/theme.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">固定资产</div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="toolbar" id="toolbar"><a class="btn btn-theme" id="toolbtn_buy" href="estate-stock-assets-buy.html"><i class="fa fa-money"></i>&nbsp;采购管理</a><a class="btn btn-theme" id="toolbtn_get" href="estate-stock-assets-get.html"><i class="fa fa-inbox"></i>&nbsp;领用管理</a><a class="btn btn-theme" id="toolbtn_scrap" href="estate-stock-assets-scrap.html"><i class="fa fa-trash"></i>&nbsp;报废管理</a><a class="btn btn-theme" id="toolbtn_sell" href="estate-stock-assets-sell.html"><i class="fa fa-shopping-cart"></i>&nbsp;出售管理</a></div>
+                    <table id="table"></table>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/moment/moment.min.js"></script>
+        <script src="../js/moment/zh-cn.js"></script>
+        <script src="../js/bootstrap-datetimepicker.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-export.min.js"></script>
+        <script src="../js/tableExport.min.js"></script>
+        <script src="../js/bootstrap-fileinput/fileinput.min.js"></script>
+        <script src="../js/bootstrap-fileinput/zh.js"></script>
+        <script src="../js/bootstrap-fileinput/theme.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                var $btn_buy = $('#toolbtn_buy');
+                var $btn_get = $('#toolbtn_get');
+                var $btn_scrap = $('#toolbtn_scrap');
+                var $btn_sell = $('#toolbtn_sell');
+                
+                var $table = $('#table');
+                
+                $table.bootstrapTable({
+                    toolbar : '#toolbar',
+                    showColumns : true,
+                    showToggle : true,
+                    showExport : true,
+                    pagination : true,
+                    showPaginationSwitch : false,
+                    columns: [
+                        {
+                            field: 'type',
+                            title: '资产类型',
+                            sortable: true,
+                            halign: 'center'
+                        }, 
+                        {
+                            field: 'name',
+                            title: '资产名称',
+                            halign: 'center'
+                        }, 
+                        {
+                            field: 'in_num',
+                            title: '入库数',
+                            halign: 'center',
+                            align: 'right'
+                        },
+                        {
+                            field: 'out_num',
+                            title: '出库数',
+                            halign: 'center',
+                            align: 'right'
+                        }, 
+                        {
+                            field: 'current_num',
+                            title: '在库数',
+                            halign: 'center',
+                            align: 'right'
+                        }
+                    ],
+                    data: [
+                        {
+                            type : '固定资产',
+                            name : '电脑',
+                            in_num : '821',
+                            out_num : '800',
+                            current_num : '21'
+                        },
+                        {
+                            type : '易耗品',
+                            name : 'A4纸',
+                            in_num : '300',
+                            out_num : '289',
+                            current_num : '11'
+                        }
+                    ]
+                });
+                
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-table.min.css">
+        <link rel="stylesheet" href="../js/summernote/summernote.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/fileinput.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/theme.min.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">招商信息编辑<a class="btn btn-sm btn-theme pull-right" href="merchant-info.html"><i class="fa fa-undo"></i>&nbsp;返回 </a></div>
+                </div>
+                <div class="col-xs-12 row-space-10">
+                    <form class="row no-bottom" id="form_edit" name="form_edit">
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>标题：</div>
+                                <input class="form-control" id="title" type="text" value="资讯标题1" name="title">
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="summernote-title"><span class="font-red-intense">*&nbsp;</span>编辑内容：</div>
+                            <div id="summernote"></div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">是否专题：</div>
+                                <select class="form-control">
+                                    <option>否</option>
+                                    <option>是</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">截止提醒：</div>
+                                <div class="input-group date" id="deadline_date">
+                                    <input class="form-control" type="text">
+                                    <div class="btn btn-line input-group-addon"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">新闻来源：</div>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">附件：</div>
+                                <input class="form-control input-file" id="input_appendix" type="file" multiple>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">审核不通过理由：</div>
+                                <div class="cool-form-content">如审核不通过，显示审核不通过理由</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="btn btn-large btn-theme" id="btn_edit"><i class="fa fa-upload"></i>&nbsp;提交修改</div>
+                            <div class="btn btn-large btn-theme" id="btn_draft"><i class="fa fa-save"></i>&nbsp;暂存</div>
+                            <div class="btn btn-large btn-theme" id="btn_preview"><i class="fa fa-eye"></i>&nbsp;预览</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/moment/moment.min.js"></script>
+        <script src="../js/moment/zh-cn.js"></script>
+        <script src="../js/bootstrap-datetimepicker.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+        <script src="../js/bootstrap-fileinput/fileinput.min.js"></script>
+        <script src="../js/bootstrap-fileinput/zh.js"></script>
+        <script src="../js/bootstrap-fileinput/theme.min.js"></script>
+        <script src="../js/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="../js/bootstrapvalidator/zh_CN.js"></script>
+        <script src="../js/summernote/summernote.min.js"></script>
+        <script src="../js/summernote/summernote-zh-CN.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var $title = $('#title'); //文章标题
+                var $deadline_date = $('#deadline_date'); //截止提醒日期
+                var $summernote = $('#summernote'); //富文本编辑器
+                var $btn_edit = $('#btn_edit'); //按钮发布
+                var $btn_draft = $('#btn_draft'); //按钮暂存
+                var $btn_preview = $('#btn_preview'); //按钮预览
+                var $input_appendix = $('#input_appendix'); //附件上传
+                var $formEdit = $('#form_edit');
+                
+                //截止提醒
+                window.commonTools.setDateTimeInput($deadline_date, '2017-10-11');
+                
+                //附件上传 初始化fileinput插件
+                window.commonTools.initBSFileInput($input_appendix, true);
+                
+                $summernote.summernote({
+                    lang: 'zh-CN',
+                    minHeight: 300,
+                    maxHeight: 600,
+                    toolbar: [
+                        ['para', ['style', 'ul', 'ol', 'paragraph']],
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['Insert',['picture', 'link', 'table']],
+                        ['misc', ['undo', 'redo', 'fullscreen']]
+                    ]
+                });
+                
+                $summernote.summernote('code', '资讯内容');
+                
+                //修改
+                $btn_edit.click(function(){
+                    if(checkValidation()) {
+                        //此处提交数据，提交成功后，返回上级页面
+                        window.location.href='merchant-info.html';
+                    }
+                });
+                
+                //暂存
+                $btn_draft.click(function(){
+                    if(checkValidation()) {
+                        //此处提交数据，提交成功后，弹出如下提示
+                        toastr.success('您编辑的内容已暂存');
+                    }
+                });
+                
+                //预览
+                $btn_preview.click(function(){
+                    if(checkValidation()) {
+                        var titleText = $title.val();
+                        var htmlStr =   '<div class="article-title">' + titleText + '</div>' + 
+                                        '<div class="article-info">' +
+                                            '<div class="article-info-item">作者：' + commonTools.getUserName() + '</div>' +
+                                            '<div class="article-info-item">发布时间：' + commonTools.getLocalTime() + '</div>' +
+                                        '</div>' +
+                                        '<div class="article-content">' +
+                                            $summernote.summernote('code') +
+                                        '</div>';
+                        BSModal.confirm({
+                            title : '预览',
+                            content : htmlStr,
+                            width : '90%',
+                            btnOK : '确定',
+                            btnCancel : '',
+                            maxHeight: '450px'
+                        });
+                    }
+                });
+                
+                $formEdit.bootstrapValidator({
+                    fields: {
+                        title: {
+                            message: '标题验证失败',
+                            validators: {
+                                notEmpty: {
+                                    message: '标题不能为空'
+                                }
+                            }
+                        }
+                    }
+                });
+                
+                //判断必填项是否都已填入内容
+                function checkValidation() {
+                    if($summernote.summernote('isEmpty')) {
+                        toastr.warning('内容不能为空');
+                        return false;
+                    } else {
+                        var bsValidator = $formEdit.data('bootstrapValidator');
+                        bsValidator.validate();
+                        var result = bsValidator.isValid();
+                        if(!result) {
+                            toastr.warning('您有未填写的必填项');
+                        }
+                        return result;
+                    }
+                }
+                
+            });
+        </script>
+    </body>
+</html>

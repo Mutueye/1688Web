@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/perfect-scrollbar.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-table.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-editable.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/fileinput.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/theme.min.css">
+        <link rel="stylesheet" href="../js/iCheck/skins/square/_all.css">
+        <link rel="stylesheet" href="../js/summernote/summernote.css">
+        <link rel="stylesheet" href="../css/bootstrap-treeview.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <style>
+            .readme-box {
+                padding:14px;
+                background-color:#f5f5f5;
+                font-size:14px;
+                line-height:1.6;
+                
+            }
+            .readme-box .p{
+                position:relative;
+                padding-left:28px;
+                display:block;
+                overflow:hidden;
+                width:auto;
+                margin-bottom:10px;
+            }
+            .readme-box.num-date .p {
+                padding-left:50px;
+            }
+            .readme-box .p .num{
+                position:absolute;
+                left:0;
+            }
+            .pt10 {
+                padding-top:10px;
+            }
+            .pb10 {
+                padding-bottom:10px;
+            }
+        </style>
+        <div class="container row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="section-title">
+                        <div class="section-title-icon"></div>
+                        <div class="section-title-text">引用说明</div>
+                    </div>
+                    <div class="readme-box">
+                        <div class="p">
+                            <div class="num">01.</div>jQuery v1.12.3
+                        </div>
+                        <div class="p">
+                            <div class="num">02.</div>bootstrap v3.3.7。bootstrap的样式和项目自定义样式合并为一个css文件：index.css。
+                            项目中的组件和布局基于bootstrap，参见bootstrap官网<a href="http://bootcss.com" target="_blank">http://bootcss.com</a>
+                        </div>
+                        <div class="p">
+                            <div class="num">03.</div>fontawesome v4.7.0 字体图标库，使用时引入font-awesome.min.css即可。官网图标对照地址：<a href="http://fontawesome.io/icons/" target="_blank">http://fontawesome.io/icons/</a>
+                        </div>
+                        <div class="p">
+                            <div class="num">04.</div>highcharts v5.0.14 图表插件，使用时引入highcharts.js和highcharts-zh_CN.js。官网地址：<a href="http://www.highcharts.com" target="_blank">http://www.highcharts.com</a>
+                        </div>
+                        <div class="p">
+                            <div class="num">05.</div>iscroll v5.2.0 滚动条插件，使用时引入iscroll.js
+                        </div>
+                        <div class="p">
+                            <div class="num">06.</div>perfect-scrollbar v0.6.16 滚动条插件，使用时引入perfect-scrollbar.min.css和perfect-scrollbar.jquery.min.js。官网地址：<a href="https://github.com/noraesae/perfect-scrollbar" target="_blank">https://github.com/noraesae/perfect-scrollbar</a>
+                        </div>
+                        <div class="p">
+                            <div class="num">07.</div>iCheck v1.0.2 checkbox 和 radio 美化插件。使用时引入js/iCheck/skins/square/_all.css（square主题）和 js/iCheck/icheck.min.js，参见<a href="http://icheck.fronteed.com/" target="_blank">http://icheck.fronteed.com/</a>
+                        </div>
+                        <div class="p">
+                            <div class="num">08.</div>bootstrapvalidator v0.5.3 表单验证插件。使用时引入bootstrapValidator.min.css，js/bootstrapvalidator/bootstrapValidato
+                            r.min.js以及js/bootstrapvalidator/zh_CN.js，参见<a href="http://bv.doc.javake.cn" target="_blank">http://bv.doc.javake.cn</a>
+                        </div>
+                        <div class="p">
+                            <div class="num">09.</div>bootstrap-table v1.11.1 表格插件。使用时引入bootstrap-table.min.css, js/bootstrap-table/bootstrap-table.min.js和
+                            js/bootstrap-table/bootstrap-table-zh-CN.min.js。有些表格也使用了该插件的导出功能扩展，使用时需要引入js/bootstrap-table/bootstrap-table-export.min.js
+                            和tableExport.min.js。参见<a href="http://bootstrap-table.wenzhixin.net.cn/zh-cn/" target="_blank">http://bootstrap-table.wenzhixin.net.cn/zh-cn/</a>
+                        </div>
+                        <div class="p">
+                            <div class="num">10.</div>bootstrap-treeview v1.2.0 树插件。使用时引入bootstrap-treeview.min.css和bootstrap-treeview.min.js。参见<a href="https://github.com/jonmiles/bootstrap-treeview" target="_blank">https://github.com/jonmiles/bootstrap-treeview</a>
+                        </div>
+                        <div class="p">
+                            <div class="num">11.</div>bootstrap-fileinput v4.4.4 文件上传插件。使用时引入js/bootstrap-fileinput/css/fileinput.min.css，js/bootstrap-fileinput/css/theme.min.css，
+                            js/bootstrap-fileinput/fileinput.min.js，js/bootstrap-fileinput/zh.js 以及 js/bootstrap-fileinput/theme.min.js。（项目中使用了看起来更舒服的文件预览主题，因此需要
+                            引入theme.min.css 和 theme.min.js）参见：<a href="http://plugins.krajee.com/file-input#top" target="_blank">http://plugins.krajee.com/file-input#top</a>
+                        </div>
+                        <div class="p">
+                            <div class="num">12.</div>bootstrap-datetimepicker v4.17.47 时间输入控件，使用时引入bootstrap-datetimepicker.min.css，moment/moment.min.js，moment/zh-cn.js以及bootstrap-datetimepicker.min.js
+                            参见<a href="http://eonasdan.github.io/bootstrap-datetimepicker/" target="_blank">http://eonasdan.github.io/bootstrap-datetimepicker/</a>
+                        </div>
+                        <div class="p">
+                            <div class="num">13.</div>summernote v0.8.8 富文本编辑器，使用时引入js/summernote/summernote.css，js/summernote/summernote.min.js和js/summernote/summernote-zh-CN.min.js。官网：<a href="https://summernote.org/" target="_blank">https://summernote.org/</a>
+                        </div>
+                        <div class="p">
+                            <div class="num">14.</div>toastr v2.1.3 消息通知弹出插件，使用时引入toastr.min.css和toastr.min.js。参见<a href="https://github.com/CodeSeven/toastr" target="_blank">https://github.com/CodeSeven/toastr</a>
+                        </div>
+                        <div class="p">
+                            <div class="num">15.</div>BSModal.js 对bootstrap模态对话框进行了简单封装，详见js/BSModal.js源码。
+                        </div>
+                        <div class="p">
+                            <div class="num">16.</div>common.js 页面通用代码，包含插件初始化、dom操作等通用功能，详见js/common.js源码。
+                        </div>
+                        <div class="p">
+                            <div class="num">17.</div>app.js 页面框架通用代码，包含页面响应式控制、浏览器信息检测、导航菜单控制等功能。app.js中包含了device.js和fastclick.js两个插件。<span class="font-red-intense">
+                                其中device.js插件用于设备检测，从而针对不同的设备（桌面pc/平板/手机)进行响应式控制，device.js会在页面的html标签上添加类似'desktop'、'tablet'、'mobile'等class来区分不同的设备，所以实际项目中需要注意保证html的class属性不被其他插件给清空或更改。</span>fastclick.js解决触摸设备浏览器点击延迟300ms。
+                            详见js/app.js源码。
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="section-title">
+                        <div class="section-title-icon"></div>
+                        <div class="section-title-text">颜色预定义样式</div>
+                    </div>
+                    <div class="readme-box">
+                        颜色对照：背景色、边框颜色、字体颜色使用同一套颜色组合，比如海蓝色，背景色class名为
+                        .bg-blue-ocean，则边框颜色class为.border-blue-ocean，字体颜色class为.font-blue-ocean。
+                        背景色可以使用.bg-hover-lighten/.bg-hover-darken对鼠标hover状态时的颜色进行变亮/变暗响应；
+                        对应字体颜色可以使用.font-hover-lighten/.font-hover-darkne对鼠标hover状态进行变色响应。
+                        颜色组合列举如下：
+                    </div>
+                    <div class="row-space-10">
+                        <div class="row mt-space">
+                            <div class="col-xs-2">
+                                <div class="pt10 pb10 text-center bg-gray-f9">
+                                    <div class="font-gray-33">.bg-gray-f9<br>#f9f9f9</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="pt10 pb10 text-center bg-gray-f5">
+                                    <div class="font-gray-33">.bg-gray-f5<br>#f5f5f5</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="pt10 pb10 text-center bg-gray-f0">
+                                    <div class="font-gray-33">.bg-gray-f0<br>#f0f0f0</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="pt10 pb10 text-center bg-gray-ee">
+                                    <div class="font-gray-33">.bg-gray-ee<br>#eeeeee</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="pt10 pb10 text-center bg-gray-eb">
+                                    <div class="font-gray-33">.bg-gray-eb<br>#ebebeb</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="pt10 pb10 text-center bg-gray-e3">
+                                    <div class="font-gray-33">.bg-gray-e3<br>#e3e3e3</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="pt10 pb10 text-center bg-gray-d6">
+                                    <div class="font-white">.bg-gray-d6<br>#d6d6d6</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="pt10 pb10 text-center bg-gray-cc">
+                                    <div class="font-white">.bg-gray-cc<br>#cccccc</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="pt10 pb10 text-center bg-gray-bb">
+                                    <div class="font-white">.bg-gray-bb<br>#bbbbbb</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="pt10 pb10 text-center bg-gray-99">
+                                    <div class="font-white">.bg-gray-99<br>#999999</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="pt10 pb10 text-center bg-gray-66">
+                                    <div class="font-white">.bg-gray-66<br>#666666</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="pt10 pb10 text-center bg-gray-33">
+                                    <div class="font-white">.bg-gray-33<br>#333333</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-3 col-md-2">
+                                <div class="pt10 pb10 text-center bg-black">
+                                    <div class="font-white">.bg-black<br>#000000</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-white">
+                                    <div class="font-gray-33">.bg-white<br>#ffffff</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-gray">
+                                    <div class="font-gray-33">.bg-gray<br>#e5e5e5</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-gray-cascade">
+                                    <div class="font-white">.bg-gray-cascade<br>#95a5a6</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-gray-silver">
+                                    <div class="font-gray-33">.bg-gray-silver<br>#bfbfbf</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-gray-cararra">
+                                    <div class="font-gray-33">.bg-gray-cararra<br>#fafafa</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-gray-gallery">
+                                    <div class="font-white">.bg-gray-gallery<br>#555555</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-3 col-md-2">
+                                <div class="pt10 pb10 text-center bg-blue">
+                                    <div class="font-white">.bg-blue<br>#3598dc</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-blue-hoki">
+                                    <div class="font-white">.bg-blue-hoki<br>#67809f</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-blue-steel">
+                                    <div class="font-white">.bg-steel<br>#4b77be</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-blue-ocean">
+                                    <div class="font-white">.bg-blue-ocean<br>#0c80e8</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-blue-madison">
+                                    <div class="font-white">.bg-blue-madison<br>#578ebe</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-blue-chambray">
+                                    <div class="font-white">.bg-blue-chambray<br>#2c3e50</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-blue-ebonyclay">
+                                    <div class="font-white">.bg-blue-ebonyclay<br>#22313f</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-3 col-md-2">
+                                <div class="pt10 pb10 text-center bg-green">
+                                    <div class="font-white">.bg-green<br>#26a69a</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-green-meadow">
+                                    <div class="font-white">.bg-green-meadow<br>#1bbc9b</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-green-seagreen">
+                                    <div class="font-white">.bg-green-seagreen<br>#1ba39c</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-green-turquoise">
+                                    <div class="font-white">.bg-green-turquoise<br>#36d7b7</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-green-haze">
+                                    <div class="font-white">.bg-green-haze<br>#44b6ae</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-green-jungle">
+                                    <div class="font-white">.bg-green-jungle<br>#26c281</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-green-grass">
+                                    <div class="font-white">.bg-green-grass<br>#09be00</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-3 col-md-2">
+                                <div class="pt10 pb10 text-center bg-red">
+                                    <div class="font-white">.bg-red<br>#cb5a5e</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-red-pink">
+                                    <div class="font-white">.bg-red-pink<br>#e08283</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-red-sunglo">
+                                    <div class="font-white">.bg-red-sunglo<br>#e26a6a</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-red-intense">
+                                    <div class="font-white">.bg-red-intense<br>#e35b5a</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-red-thunderbird">
+                                    <div class="font-white">.bg-red-thunderbird<br>#d91e18</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-red-flamingo">
+                                    <div class="font-white">.bg-red-flamingo<br>#ef4836</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-red-orange">
+                                    <div class="font-white">.bg-red-orange<br>#e4420a</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-3 col-md-2">
+                                <div class="pt10 pb10 text-center bg-yellow">
+                                    <div class="font-white">.bg-yellow<br>#c49f47</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-yellow-gold">
+                                    <div class="font-white">.bg-yellow-gold<br>#e87e04</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-yellow-casablanca">
+                                    <div class="font-white">.bg-yellow-casablanca<br>#f2784b</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-yellow-crusta">
+                                    <div class="font-white">.bg-yellow-crusta<br>#f3c200</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-yellow-saffron">
+                                    <div class="font-white">.bg-yellow-saffron<br>#f4d03f</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-yellow-sunset">
+                                    <div class="font-white">.bg-yellow-sunset<br>#e89d0c</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-yellow-bronze">
+                                    <div class="font-white">.bg-yellow-bronze<br>#ff9000</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-3 col-md-2">
+                                <div class="pt10 pb10 text-center bg-purple">
+                                    <div class="font-white">.bg-purple<br>#8e5fa2</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-purple-plum">
+                                    <div class="font-white">.bg-purple-plum<br>#8775a7</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-purple-medium">
+                                    <div class="font-white">.bg-purple-medium<br>#bf55ec</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-purple-studio">
+                                    <div class="font-white">.bg-purple-studio<br>#8e44ad</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-purple-wisteria">
+                                    <div class="font-white">.bg-purple-wisteria<br>#9b59b6</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-purple-seance">
+                                    <div class="font-white">.bg-purple-seance<br>#9a12b3</div>
+                                </div>
+                                <div class="pt10 pb10 text-center bg-purple-sunset">
+                                    <div class="font-white">.bg-purple-sunset<br>#6902b9</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="section-title">
+                        <div class="section-title-icon"></div>
+                        <div class="section-title-text">按钮相关样式</div>
+                    </div>
+                    <div class="readme-box">在使用bootstrap默认的各种按钮同时，还有如下预定义按钮样式：<br>1.以项目主题色为背景的按钮,选择器名称.btn-theme：<br>
+                        <div class="btn btn-theme">主题色按钮</div><br>2.表单统一风格的按钮<br>
+                        <div class="btn btn-line">表单用按钮</div><br>3.额外定义了三种按钮大小：.btn-large, .btn-small, .btn-tiny<br>
+                        <div class="btn btn-theme btn-large">btn-large按钮</div>
+                        <div class="btn btn-theme btn-small">btn-small按钮</div>
+                        <div class="btn btn-theme btn-tiny">btn-tiny按钮</div><br>4.可一使用背景色类和字体颜色类对按钮进行灵活定制，以下是一些范例：<br>
+                        <div class="btn bg-red-intense bg-hover-darken font-white">按钮</div>
+                        <div class="btn bg-purple-sunset bg-hover-lighten font-yellow-crusta">按钮</div>
+                        <div class="btn bg-yellow-gold bg-hover-darken font-blue-ebonyclay font-hover-darken">按钮</div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="section-title">
+                        <div class="section-title-icon"></div>
+                        <div class="section-title-text">表单综合示例</div>
+                    </div>
+                    <div class="row-space-10">
+                        <form class="row no-bottom" id="form_example" name="form_example">
+                            <div class="col-xs-12">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">静态内容：</div>
+                                    <div class="cool-form-content">
+                                         高度自动，可以根据需要填充不同内容<br>比如普通文本图片等内容。</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">文本框：</div>
+                                    <input class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*</span>&nbsp;必填带红星：</div>
+                                    <input class="form-control" type="text" name="input_text">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">已禁用文本框：</div>
+                                    <input class="form-control" type="text" value="禁用文本框不可输入" disabled>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">带单位文本框：</div>
+                                    <div class="input-group">
+                                        <input class="form-control" type="text">
+                                        <div class="input-group-addon">元</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">带图标文本框：</div>
+                                    <div class="input-group">
+                                        <input class="form-control" type="text">
+                                        <div class="input-group-addon"><i class="fa fa-wechat"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">带按钮文本框：</div>
+                                    <div class="input-group">
+                                        <input class="form-control" type="text">
+                                        <div class="input-group-addon btn btn-line"><i class="fa fa-search"></i>&nbsp;查询</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">区间组合：</div>
+                                    <div class="input-group">
+                                        <input class="form-control" type="text">
+                                        <div class="input-group-addon no-bl">平米</div>
+                                        <div class="input-group-addon no-border"><i class="fa fa-arrows-h"></i></div>
+                                        <input class="form-control" type="text">
+                                        <div class="input-group-addon">平米</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">时间控件：</div>
+                                    <input class="form-control" type="text" id="time1">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">默认值时间：</div>
+                                    <input class="form-control" type="text" id="time2">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">带按钮时间：</div>
+                                    <div class="input-group date" id="time3">
+                                        <input class="form-control" type="text">
+                                        <div class="input-group-addon btn btn-line"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">带时分时间：</div>
+                                    <div class="input-group date" id="time4">
+                                        <input class="form-control" type="text">
+                                        <div class="input-group-addon btn btn-line"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">起始时间：</div>
+                                    <div class="input-group date" id="time5">
+                                        <input class="form-control" type="text">
+                                        <div class="input-group-addon btn btn-line"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">结束时间：</div>
+                                    <div class="input-group date" id="time6">
+                                        <input class="form-control" type="text">
+                                        <div class="input-group-addon btn btn-line"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">下拉菜单：</div>
+                                    <select class="form-control">
+                                        <option>选项A</option>
+                                        <option>选项B</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">禁用下拉菜单：</div>
+                                    <select class="form-control" disabled>
+                                        <option>选项A</option>
+                                        <option>选项B</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group cool-form-group form-group-sm cool-form-input-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon addon-label">标签宽度不固定的表单：</div>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">复选框：</div>
+                                    <div class="cool-form-content icheck-label">
+                                        <label>
+                                            <input type="checkbox" id="checkbox1">
+                                            <div class="icheck-text">复选框Checkbox1</div>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" id="checkbox2">
+                                            <div class="icheck-text">复选框Checkbox2</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">单选框：</div>
+                                    <div class="cool-form-content icheck-label">
+                                        <label>
+                                            <input type="radio" name="radio" id="radio1">
+                                            <div class="icheck-text">单选框Radio1</div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="radio" id="radio2">
+                                            <div class="icheck-text">单选框Radio2</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">单文件上传：</div>
+                                    <input class="form-control" id="input_appendix1" type="file">
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">多文件上传：</div>
+                                    <input class="form-control" id="input_appendix2" type="file" multiple>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">上传带初始预览：</div>
+                                    <input class="form-control" id="input_appendix3" type="file" multiple>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="box-form has-title">
+                                    <div class="box-form-title">可增减的表单组</div>
+                                    <div class="row no-bottom" id="add_value_content"></div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*</span>&nbsp;文本域：</div>
+                                    <textarea class="textarea form-control" rows="3" name="textarea"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*</span>&nbsp;富文本编辑：</div>
+                                    <div class="cool-form-content summernote-content">
+                                        <div id="summernote"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">UEditor：</div>
+                                    <div class="cool-form-content ueditor-content">
+                                        <script id="container" name="content" type="text/plain"></script>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">换行不省略：</div>
+                                    <div class="dropdown treeview-select">                         
+                                        <button class="treeview-select-btn" type="button" id="btn_tree_list" data-toggle="dropdown"></button>
+                                        <input class="treeview-select-input" type="text" id="tree_list">
+                                        <div class="dropdown-menu treeview-select-tree" style="width:100%;" id="tree"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">省略不换行：</div>
+                                    <div class="dropdown treeview-select">                         
+                                        <button class="treeview-select-btn text-overflow-hidden" type="button" id="btn_tree_list_2" data-toggle="dropdown"></button>
+                                        <input class="treeview-select-input" type="text" id="tree_list_2">
+                                        <div class="dropdown-menu treeview-select-tree" style="width:100%;" id="tree2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="btn btn-large btn-theme" id="btn_submit"><i class="fa fa-check-square"></i>&nbsp;表单验证</div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="readme-box mt-space">
+                        <div class="p" style="padding-left:0;">表单示例说明：</div>
+                        <div class="p">
+                            <div class="num">01.</div>示例中使用bootstrapvalidator进行了简单的非空验证，实际项目的前端静态页面中并未加入表单验证，请开发人员根据实际需要，参考官方文档和网上资料加入表单验证。
+                        </div>
+                        <div class="p">
+                            <div class="num">02.</div>关于bootstrap-fileinput插件，此处仅演示了前端效果，具体文件上传的ajax或form提交方式，请参考官方文档<a href="http://plugins.krajee.com/file-input#top" target="_blank">http://plugins.krajee.com/file-input#top</a>和网上资料，比如<a href="http://blog.csdn.net/u012157999/article/details/53150845" target="_blank">bootstrap fileinput 的使用感悟</a>和<a href="http://blog.csdn.net/qing_gee/article/details/48949701" target="_blank">Bootstrap fileinput.js，最好用的文件上传组件</a>等
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="section-title">
+                        <div class="section-title-icon"></div>
+                        <div class="section-title-text">更新记录</div>
+                    </div>
+                    <div class="readme-box num-date">
+                        <div class="p">
+                            <div class="num">10.16</div>创业孵化和资源服务完成；招商管理-报表统计-企业类型统计 修改图表label字体大小
+                        </div>
+                        <div class="p">
+                            <div class="num">10.24</div>1.完成办公协同相关页面；<br>2.新完成的页面和各系统主框架页面（index-sys.html等9个）页面内的js单独放置同名文件中。
+                            后续页面也将js单独放在同名文件中；<br>3.修改了主菜单控制部分的代码(在app.js中)，修正同一个页面存在两个菜单互相影响的问题，在index-sys.html
+                            等9个主页面内，触发菜单切换时间的方式，由$('body').trigger('tmenu.changeSel'... 改为$('#tree_menu').trigger('tmenu.changeSel'...；
+                            增加了是否自动选中首个菜单项、点击是否能选中菜单项的选项功能，增加的功能不需要修改以前的菜单初始化代码。<br>4.在index-sys.html等9个主页面内，修改为对移动端和PC端加载不同的菜单数据；<br>5.办公协同页面的在线聊天工具，采用了layIM3.6.0。在网上多方查询和对比，选择了此插件，并参考官方示例嵌入到了当前页面内，但具体使用和开发未做
+                            详细研究，好在官方文档详细，网上也可搜到如何接入后端的相关教程，所以还需要开发人员进行二次开发。如果有更好或更熟悉的在线聊天插件，Feel free to 使用更好用插件。
+                            layIM官网：<a href="http://layim.layui.com/">http://layim.layui.com/</a><br>6.某些页面使用了bootstrap-select插件，例如办公协同-个人事务-通知公告-通知公告发布页面内的通知名单下拉选择。
+                            参考官网：<a href="http://silviomoreto.github.io/bootstrap-select/">http://silviomoreto.github.io/bootstrap-select/</a><br>7.上方表单示例新增了uEditor样式调整示例，将uEditor的初始化script标签放入class=ueditor-content的div内，即可覆盖插件原有的样式，调整圆角为直角，统一视觉风格。
+                            (由于没有接入后台，console会报错，并且加载显示出来较慢，需要等待一会)
+                        </div>
+                        <div class="p">
+                            <div class="num">10.31</div>1.完成运营管理和党团管理相关页面；创业孵化增加创业空间和创业扶持相关页面；
+                            2.各系统主框架页面（index-sys.js等9个）内增加了区分Web端和移动端菜单的功能，通过device.js判断设备，加载不同的菜单数据。
+                        </div>
+                        <div class="p">
+                            <div class="num">11.08</div>1.固定资产相关页面（OA/物业）<br>2.系统管理的流程管理和组织架构页面
+                        </div>
+                        <div class="p">
+                            <div class="num">11.10</div>1.新增系统管理的用户管理页面；OA-人力资源-人员信息新增/编辑：添加地址选择、民族选择、政治面貌选择；OA-个人事务-通知公告：修改tab页切换通知/公告<br>2.门户网站1688Web，新增 招商、资讯、党团、关于 页面
+                        </div>
+                        <div class="p">
+                            <div class="num">11.16</div>1.新增系统管理-权限管理相关页面；OA-个人事务-通知公告-发布：添加树结构的人员列表选择功能<br>2.门户网站1688Web，新增 注册、个人中心页面，文章列表增加分页样式<br>3.关于bootstrap-treeview插件，11.08号新增组织架构页面时，已替换为扩展版的插件：https://github.com/patternfly/patternfly-bootstrap-treeview，如果遇到插件报错，请复制该插件最新的静态资源覆盖到项目开发目录。
+                        </div>
+                        <div class="p">
+                            <div class="num">11.20</div>1.新增树形下拉多选菜单，见本页表单示例“表单验证”按钮上方，另见OA-个人事物-通知公告-发布通知页面。其他页面如需树形下拉菜单请参考这几个例子拷贝过去使用。<br>2.门户网站1688Web，新增 创业服务、资源服务 相关页面
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/highcharts.js"></script>
+        <script src="../js/highcharts-zh_CN.js"></script>
+        <script src="../js/iscroll.js"></script>
+        <script src="../js/perfect-scrollbar.jquery.min.js"></script>
+        <script src="../js/moment/moment.min.js"></script>
+        <script src="../js/moment/zh-cn.js"></script>
+        <script src="../js/bootstrap-datetimepicker.min.js"></script>
+        <script src="../js/iCheck/icheck.min.js"></script>
+        <script src="../js/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="../js/bootstrapvalidator/zh_CN.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-export.min.js"></script>
+        <script src="../js/tableExport.min.js"></script>
+        <script src="../js/bootstrap-treeview.min.js"></script>
+        <script src="../js/bootstrap-fileinput/fileinput.min.js"></script>
+        <script src="../js/bootstrap-fileinput/zh.js"></script>
+        <script src="../js/bootstrap-fileinput/theme.min.js"></script>
+        <script src="../js/summernote/summernote.min.js"></script>
+        <script src="../js/summernote/summernote-zh-CN.min.js"></script>
+        <script src="../js/ueditor-utf8-jsp/ueditor.config.js"></script>
+        <script src="../js/ueditor-utf8-jsp/ueditor.all.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                var $summernote = $('#summernote');
+                var $form_example = $('#form_example');
+                var $btn_submit = $('#btn_submit');
+                
+                //时间空间bootstrap-datetimepicker初始化
+                window.commonTools.setDateTimeInput($('#time1'));
+                window.commonTools.setDateTimeInput($('#time2'),'2010-10-10');
+                window.commonTools.setDateTimeInput($('#time3'));
+                window.commonTools.setDateTimeInput($('#time4'),'','YYYY-MM-DD HH:mm');
+                window.commonTools.setDateTimeInputSection($('#time5'),$('#time6'));
+                
+                //文件上传bootstrap-fileinput初始化
+                window.commonTools.initBSFileInput($('#input_appendix1'));
+                window.commonTools.initBSFileInput($('#input_appendix2'));
+                window.commonTools.initBSFileInput($('#input_appendix3'),true);
+                
+                //icheck初始化
+                $('#checkbox1, #checkbox2, #radio1, #radio2').iCheck({
+                    checkboxClass: 'icheckbox_square-blue',
+                    radioClass: 'iradio_square-blue'
+                }).on('ifChanged', function(e){
+                    console.log('checkbox1:状态：' + $('#checkbox1').is(':checked') + ' ' + 'checkbox2:状态：' + $('#checkbox2').is(':checked'));
+                });
+                
+                //summernote初始化
+                $summernote.summernote({
+                    lang: 'zh-CN',
+                    minHeight: 300,
+                    maxHeight: 600,
+                    toolbar: [
+                        ['para', ['style', 'ul', 'ol', 'paragraph']],
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['Insert',['picture', 'link', 'table']],
+                        ['misc', ['undo', 'redo', 'fullscreen']]
+                    ]
+                });
+                //summernote初始赋值
+                //$summernote.summernote('code', '<i class="fa fa-check-square"></i>&nbsp;初始内容');
+                
+                //实例化ueditor编辑器
+                var ue = UE.getEditor('container');
+                
+                //表单验证
+                $form_example.bootstrapValidator({
+                    fields: {
+                        input_text: {
+                            message: '验证失败',
+                            validators: {
+                                notEmpty: {
+                                    message: '输入框不能为空'
+                                }
+                            }
+                        },
+                        textarea: {
+                            message: '验证失败',
+                            validators: {
+                                notEmpty: {
+                                    message: '文本域不能为空'
+                                }
+                            }
+                        }
+                    }
+                });
+                
+                //判断必填项是否都已填入内容
+                function checkValidation() {
+                    if($summernote.summernote('isEmpty')) {
+                        toastr.warning('富文本编辑器内容不能为空');
+                        return false;
+                    } else {
+                        var bsValidator = $form_example.data('bootstrapValidator');
+                        bsValidator.validate();
+                        var result = bsValidator.isValid();
+                        if(!result) {
+                            toastr.warning('您有未填写的必填项');
+                        }
+                        return result;
+                    }
+                }
+                
+                //提交
+                $btn_submit.click(function(){
+                    if(checkValidation()) {
+                        toastr.success('表单验证通过');
+                    }
+                });
+                
+                var addValueFormData = [
+                    {
+                        service_type : '服务1',
+                        price : '2300.00',
+                        unit : '每人'
+                    },
+                    {
+                        service_type : '服务2',
+                        price : '1200.00',
+                        unit : '每天'
+                    },
+                    {
+                        service_type : '服务3',
+                        price : '200.00',
+                        unit : '平米'
+                    },
+                    {
+                        service_type : '服务4',
+                        price : '600.00',
+                        unit : '每小时'
+                    }
+                ];
+                
+                function getServiceTypeOptions(formData) {
+                    var selectData = [];
+                    for(i in formData) {
+                        selectData.push({
+                            value : formData[i].service_type,
+                            text : formData[i].service_type
+                        });
+                    }
+                    return selectData;
+                }
+                
+                var serviceTypeOptions = getServiceTypeOptions(addValueFormData);
+                
+                window.commonTools.duplicateFormCtrl({
+                    container : $('#add_value_content'),
+                    html :  '<div class="col-xs-12 col-sm-3">' +
+                                '<div class="form-group form-group-sm cool-form-group cool-form-input-group">' +
+                                    '<select class="form-control" id="service_type"></select>' +
+                                '</div>' +
+                            '</div>' + 
+                            '<div class="col-xs-12 col-sm-3">' +
+                                '<div class="form-group form-group-sm cool-form-group cool-form-input-group">' +
+                                    '<div class="input-group">' +
+                                        '<div class="input-group-addon addon-label">价格：</div>' +
+                                        '<div class="cool-form-content" id="price"></div>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="col-xs-12 col-sm-2">' +
+                                '<div class="form-group form-group-sm cool-form-group cool-form-input-group">' +
+                                    '<div class="input-group">' +
+                                        '<div class="input-group-addon addon-label">单位：</div>' +
+                                        '<div class="cool-form-content" id="unit"></div>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="col-xs-12 col-sm-2 col-md-3">' +
+                                '<div class="form-group form-group-sm cool-form-group cool-form-input-group">' +
+                                    '<div class="input-group">' +
+                                        '<div class="input-group-addon addon-label">数量：</div>' +
+                                        '<input type="text" class="form-control" id="qtty">' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="col-xs-12 col-sm-2 col-md-1">' +
+                                '<div class="btn btn-line btn-line-red btn-small btn-block" id="btn_delete">' +
+                                    '<i class="fa fa-remove"></i>&nbsp;删除' + 
+                                '</div>' +
+                            '</div>',
+                    ids : ['service_type', 'price', 'unit', 'qtty', 'btn_delete'],
+                    btn_delete_id : 'btn_delete',
+                    btn_add_id : 'btn_add',
+                    btn_add_container_id : 'btn_add_container',
+                    btn_add_html :  '<div id="btn_add_container">' +
+                                        '<div class="col-xs-12 col-sm-10 col-md-11">' +
+                                            '<div class="form-group form-group-sm cool-form-group cool-form-input-group">' +
+                                                '<div class="cool-form-content">点击添加按钮，添加新的表单组</div>' +
+                                            '</div>' +
+                                        '</div>' +
+                                        '<div class="col-xs-12 col-sm-2 col-md-1">' +
+                                            '<div class="btn btn-line btn-small btn-block" id="btn_add">' +
+                                                '<i class="fa fa-plus"></i>&nbsp;添加' + 
+                                            '</div>' +
+                                        '</div>' +
+                                    '</div>',
+                    init_number : 0,
+                    max_number : 4,
+                    afterAdd : function($container, id) {
+                        console.log(serviceTypeOptions);
+                        //新增表单组时，初始化物品类型下拉菜单数据
+                        window.commonTools.addSelectOptions($('#service_type_' + id), serviceTypeOptions);
+                        //根据select选择，填充带出的表单数据
+                        fillAddValueFormData(addValueFormData, 'service_type', $('#service_type_' + id).val(), id);
+                        $('#service_type_' + id).change(function(){
+                            fillAddValueFormData(addValueFormData, 'service_type', $('#service_type_' + id).val(), id);
+                        });
+                    }
+                });
+                
+                //填充增值服务表单中，服务类型select带出的表单内容
+                //formData 表单数据的对象数组
+                //key 表单数据数组对象中已知的对象的某一属性
+                //selectVal select选中的值，与已知的对象的某一属性对应的值相同
+                function fillAddValueFormData(formData, key, selectVal, id){
+                    var data = window.commonTools.getSubArrayByObjValue(formData, key, selectVal)[0];
+                    $('#price_' + id).text(data.price + '元');
+                    $('#unit_' + id).text(data.unit);
+                }
+                
+                
+                //以下是树形下拉菜单相关控制=======================================
+            
+                //当前选择的人员列表
+                var selectedUserStr = "黄任勋，张部龄，付洪涛，肖可峰，张晓晓，胡星亮，周一博，兰于东，赵西冷";
+            
+                //使bootstrap dropdown 插件在点击树结构时不收起
+                $(document).on('click.bs.dropdown.data-api', '.dropdown .treeview-select-tree', function (e) { e.stopPropagation() });
+            
+                var user_list = [
+                    {
+                        text: "董事局",
+                        icon: "fa fa-users",
+                        type: "组织",
+                        root: true,
+                        nodes: [
+                            {
+                                text: "黄任勋",
+                                icon: "fa fa-user-circle-o",
+                                tags: ['董事局主席'],
+                                type: "个人"
+                            },
+                            {
+                                text: "张部龄",
+                                icon: "fa fa-user-circle-o",
+                                tags: ['董事，总经理'],
+                                type: "个人"
+                            },
+                            {
+                                text: "付洪涛",
+                                icon: "fa fa-user-circle-o",
+                                tags: ['董事，副总经理'],
+                                type: "个人"
+                            },
+                            {
+                                text: "肖可峰",
+                                icon: "fa fa-user-circle-o",
+                                tags: ['董事'],
+                                type: "个人"
+                            },
+                            {
+                                text: "行政部",
+                                icon: "fa fa-users",
+                                type: "组织",
+                                nodes: [
+                                    {
+                                        text: "张晓晓",
+                                        icon: "fa fa-user-circle-o",
+                                        tags: ['副行政部长'],
+                                        type: "个人"
+                                    },
+                                    {
+                                        text: "胡星亮",
+                                        icon: "fa fa-user-circle-o",
+                                        tags: ['主任'],
+                                        type: "个人"
+                                    }
+                                ]
+                            },
+                            {
+                                text: "财政部",
+                                icon: "fa fa-users",
+                                type: "组织",
+                                nodes: [
+                                    {
+                                        text: "周一博",
+                                        icon: "fa fa-user-circle-o",
+                                        tags: ['财政部长'],
+                                        type: "个人"
+                                    },
+                                    {
+                                        text: "兰于东",
+                                        icon: "fa fa-user-circle-o",
+                                        tags: ['副财政部长'],
+                                        type: "个人"
+                                    },
+                                    {
+                                        text: "赵西冷",
+                                        icon: "fa fa-user-circle-o",
+                                        tags: ['会计'],
+                                        type: "个人"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ];
+            
+                $('#tree, #tree2').treeview({
+                    data:user_list,
+                    levels: 1, //默认展开1层
+                    showTags: false,
+                    selectable: false,
+                    showCheckbox : true,
+                    checkboxFirst : true,
+                    hierarchicalCheck : true,
+                    propagateCheckEvent : true,
+                    collapseIcon: 'fa fa-minus-square',
+                    expandIcon: 'fa fa-plus-square'
+                });
+            
+                $('#tree').on('nodeChecked', function(event, data) {
+                    fillTreeviewSelectList($('#tree_list'), $('#btn_tree_list'), $('#tree').treeview('getChecked'), '请勾选人员：');
+                    console.log($('#tree_list').val());
+                });
+            
+                $('#tree').on('nodeUnchecked', function(event, data) {
+                    fillTreeviewSelectList($('#tree_list'), $('#btn_tree_list'), $('#tree').treeview('getChecked'), '请勾选人员：');
+                    console.log($('#tree_list').val());
+                });
+            
+                checkTreeviewSelect($('#tree'), selectedUserStr);
+                
+                $('#tree2').on('nodeChecked', function(event, data) {
+                    fillTreeviewSelectList($('#tree_list_2'), $('#btn_tree_list_2'), $('#tree2').treeview('getChecked'), '请勾选人员：');
+                    console.log($('#tree_list_2').val());
+                });
+            
+                $('#tree2').on('nodeUnchecked', function(event, data) {
+                    fillTreeviewSelectList($('#tree_list_2'), $('#btn_tree_list_2'), $('#tree2').treeview('getChecked'), '请勾选人员：');
+                    console.log($('#tree_list_2').val());
+                });
+            
+                checkTreeviewSelect($('#tree2'), selectedUserStr);
+            
+                //根据字符串数组勾选树节点
+                function checkTreeviewSelect($tree, selectedUserStr) {
+                    if(selectedUserStr.length > 0) {
+                        var selectedUserArray = selectedUserStr.split('，');
+                        var nodes = $tree.treeview('getNodes');
+                        for(var i in nodes) {
+                            for(var j in selectedUserArray) {
+                                if(nodes[i].text == selectedUserArray[j]) {
+                                    //使用checkNode方法，子节点勾选，父节点不显示“部分勾选”的状态
+                                    //$tree.treeview('checkNode',[nodes[i], {silent:false}]);
+                                    $tree.treeview('toggleNodeChecked',[nodes[i], {silent:false}]);
+                                }
+                            }
+                        }
+                    }
+                }
+            
+                //解析勾选的人员树节点数组，填充到人员列表input内
+                //$input 不可见的input，方便表单提交数据
+                //$btn 下拉菜单的触发按钮，并显示当前选择的内容，空内容显示defaultText的字符串
+                //checkedNodes 当前勾选的节点数组
+                //defaultText 没有勾选时$btn显示的文字内容
+                function fillTreeviewSelectList($input, $btn, checkedNodes, defaultText) {
+                    var defaultStr = defaultText ? defaultText : '请选择';
+                    if(checkedNodes.length > 0) {
+                        var listStrArray = [];
+                        var listStrSeparator = "，";
+                        for(var i in checkedNodes) {
+                            if(checkedNodes[i].type == '个人') {
+                                listStrArray.push(checkedNodes[i].text);
+                            }
+                        }
+                        var listStr = listStrArray.join(listStrSeparator);
+                        $input.val(listStr);
+                        $btn.text(listStr);
+            
+                    } else {
+                        $input.val('');
+                        $btn.text(defaultStr);
+                    }
+            
+                }
+                
+                
+            });
+        </script>
+    </body>
+</html>

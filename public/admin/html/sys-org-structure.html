@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-treeview.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">组织架构</div>
+                </div>
+            </div>
+        </div>
+        <div class="structure-toolbar">
+            <div class="container row-space-10">
+                <div class="row" id="toolbtns">
+                    <div class="col-xs-12 text-center">
+                        <div class="btn btn-theme" id="btn_edit"><i class="fa fa-edit"></i>&nbsp;编辑该节点</div>
+                        <div class="btn btn-theme" id="btn_add_before"><i class="fa fa-plus"></i>&nbsp;前添加节点</div>
+                        <div class="btn btn-theme" id="btn_add_after"><i class="fa fa-plus"></i>&nbsp;后添加节点</div>
+                        <div class="btn btn-theme" id="btn_add_sub"><i class="fa fa-plus"></i>&nbsp;添加子节点</div>
+                        <div class="btn bg-red bg-hover-darken font-white" id="btn_remove"><i class="fa fa-remove"></i>&nbsp;删除该节点</div>
+                    </div>
+                </div>
+                <div class="row" id="tooltip">
+                    <div class="col-xs-12">
+                        <div class="text-center font-gray-66">请选择节点进行编辑</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container row-space-10">
+            <div class="row">
+                <div class="col-xs-12" style="text-align:center;">
+                    <div class="structure-tree">
+                        <div id="tree-zzjg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap-treeview.min.js"></script>
+        <script src="../js/jquery.scrollFix.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/sys-org-structure.js"></script>
+    </body>
+</html>

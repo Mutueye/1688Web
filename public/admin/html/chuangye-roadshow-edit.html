@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-table.min.css">
+        <link rel="stylesheet" href="../js/summernote/summernote.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/fileinput.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/theme.min.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">创业路演编辑<a class="btn btn-sm btn-theme pull-right" href="chuangye-roadshow.html"><i class="fa fa-undo"></i>&nbsp;返回</a></div>
+                </div>
+                <div class="col-xs-12 row-space-10">
+                    <form class="row no-bottom" id="form" name="form">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>标题：</div>
+                                <input class="form-control" id="theme" type="text" name="theme" value="路演标题">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>发起者：</div>
+                                <input class="form-control" id="lecturer" type="text" name="lecturer" value="王晓峰">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>报名起始时间：</div>
+                                <div class="input-group date" id="start_time_container">
+                                    <input class="form-control" id="start_time" type="text" name="start_time">
+                                    <div class="input-group-addon btn btn-line"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>报名截止时间：</div>
+                                <div class="input-group date" id="end_time_container">
+                                    <input class="form-control" id="end_time" type="text" name="end_time">
+                                    <div class="input-group-addon btn btn-line"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>活动起始时间：</div>
+                                <div class="input-group date" id="hold_start_time_container">
+                                    <input class="form-control" id="hold_start_time" type="text" name="hold_start_time">
+                                    <div class="input-group-addon btn btn-line"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>活动截止时间：</div>
+                                <div class="input-group date" id="hold_end_time_container">
+                                    <input class="form-control" id="hold_end_time" type="text" name="hold_end_time">
+                                    <div class="input-group-addon btn btn-line"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>活动地点：</div>
+                                <input class="form-control" id="address" type="text" name="address" value="D2 202">
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*&nbsp;</span>简介：</div>
+                                <textarea class="textarea form-control" id="intro" rows="3" name="intro">简介内容</textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">
+                                     前台显示图片：</div>
+                                <input class="form-control input-file" id="input_appendix" type="file" name="input_appendix">
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label"> <span class="font-red-intense">*</span>&nbsp;培训详细内容：</div>
+                                <div class="cool-form-content summernote-content">
+                                    <div id="summernote"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group cool-form-group form-group-sm">
+                                <div class="cool-form-label text-right control-label">审核不通过理由：</div>
+                                <textarea class="textarea form-control" id="orgintro" name="orgintro" rows="3" disabled>如审核未通过，显示审核不通过理由</textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="btn btn-large btn-theme" id="btn_publish"><i class="fa fa-upload"></i>&nbsp;提交申请</div>
+                            <div class="btn btn-large btn-theme" id="btn_draft"><i class="fa fa-save"></i>&nbsp;暂存</div>
+                            <div class="btn btn-large btn-theme" id="btn_preview"><i class="fa fa-eye"></i>&nbsp;预览</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/moment/moment.min.js"></script>
+        <script src="../js/moment/zh-cn.js"></script>
+        <script src="../js/bootstrap-datetimepicker.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+        <script src="../js/bootstrap-fileinput/fileinput.min.js"></script>
+        <script src="../js/bootstrap-fileinput/zh.js"></script>
+        <script src="../js/bootstrap-fileinput/theme.min.js"></script>
+        <script src="../js/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="../js/bootstrapvalidator/zh_CN.js"></script>
+        <script src="../js/summernote/summernote.min.js"></script>
+        <script src="../js/summernote/summernote-zh-CN.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var $summernote = $('#summernote'); //富文本编辑器
+                var $btn_publish = $('#btn_publish'); //按钮发布
+                var $btn_draft = $('#btn_draft'); //按钮暂存
+                var $btn_preview = $('#btn_preview'); //按钮预览
+                var $input_appendix = $('#input_appendix');
+                var $form = $('#form');
+                
+                //附件上传 初始化fileinput插件
+                window.commonTools.initBSFileInput($input_appendix, true, true);
+                //初始化时间控件
+                window.commonTools.setDateTimeInputSection($('#hold_start_time_container'),$('#hold_end_time_container'),'2018-10-12 12:30', '2018-10-13 12:30', 'YYYY-MM-DD HH:mm');
+                window.commonTools.setDateTimeInputSection($('#start_time_container'),$('#end_time_container'), '2018-10-13 12:30', '2018-10-14 12:30', 'YYYY-MM-DD HH:mm');
+                //同时使用DateTimePicker和bootstrapValidator时，需要手动触发时间输入框的表单验证
+                $('#start_time_container').on('dp.hide',function(e) {  
+                    $form.data('bootstrapValidator')  
+                        .updateStatus('start_time', 'NOT_VALIDATED',null)  
+                        .validateField('start_time');  
+                });
+                $('#end_time_container').on('dp.hide',function(e) {  
+                    $form.data('bootstrapValidator')  
+                        .updateStatus('end_time', 'NOT_VALIDATED',null)  
+                        .validateField('end_time');  
+                });
+                $('#hold_start_time_container').on('dp.hide',function(e) {  
+                    $form.data('bootstrapValidator')  
+                        .updateStatus('hold_start_time', 'NOT_VALIDATED',null)  
+                        .validateField('hold_start_time');  
+                });
+                $('#hold_end_time_container').on('dp.hide',function(e) {  
+                    $form.data('bootstrapValidator')  
+                        .updateStatus('hold_end_time', 'NOT_VALIDATED',null)  
+                        .validateField('hold_end_time');  
+                });
+                
+                $summernote.summernote({
+                    lang: 'zh-CN',
+                    minHeight: 300,
+                    maxHeight: 600,
+                    toolbar: [
+                        ['para', ['style', 'ul', 'ol', 'paragraph']],
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['Insert',['picture', 'link', 'table']],
+                        ['misc', ['undo', 'redo', 'fullscreen']]
+                    ]
+                });
+                $summernote.summernote('code','详细内容');
+                
+                //发布
+                $btn_publish.click(function(){
+                    if(checkValidation()) {
+                        //此处提交数据，提交成功后，返回上级页面
+                        window.location.href='chuangye-roadshow.html';
+                    }
+                });
+                
+                //暂存
+                $btn_draft.click(function(){
+                    if(checkValidation()) {
+                        //此处提交数据，提交成功后，弹出如下提示
+                        toastr.success('您编辑的内容已暂存');
+                    }
+                });
+                
+                //预览
+                $btn_preview.click(function(){
+                    if(checkValidation()) {
+                        var logoUrl = commonTools.getFilePath($("#input_appendix"));
+                        if(logoUrl == '' || !logoUrl) {
+                            if($input_appendix.fileinput('getPreview').content.length > 0) {
+                                logoUrl = $input_appendix.fileinput('getPreview').content[0];
+                            } else {
+                                logoUrl = '../images/rcs-empty.jpg';
+                            }
+                        }
+                        var htmlStr =   '<div class="row-space-common">' +
+                                            '<div class="row">' +
+                                                '<div class="col-xs-12">' +
+                                                    '<div class="orgintro-container">' +
+                                                        '<div class="orgintro-logo">' +
+                                                            '<img src="' + logoUrl + '">' +
+                                                        '</div>' +
+                                                        '<div class="orgintro-title">' + $('#theme').val() + '</div>' +
+                                                        '<div class="orgintro-content">' + 
+                                                            '<p>发起人：' + $('#lecturer').val() + '</p>' + 
+                                                            '<p>报名时间：' + $('#start_time').val() + ' ~  '+ $('#end_time').val() + '&nbsp;&nbsp;&nbsp;活动时间：' + $('#hold_start_time').val() + ' ~  '+ $('#hold_end_time').val() + '</p>' + 
+                                                            '<p>活动地址：' + $('#address').val() + '</p>' +
+                                                            '<p>简介：' + $('#intro').val() + '</p>' +
+                                                        '</div>' +
+                                                    '</div>' +
+                                                '</div>' +
+                                                '<div class="col-xs-12">' +
+                                                    '<div class="section-title">' +
+                                                        '<div class="section-title-icon"></div>' +
+                                                        '<div class="section-title-text">详细内容</div>' +
+                                                    '</div>' +
+                                                    '<div class="article-content">' +
+                                                        $summernote.summernote('code') +
+                                                    '</div>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>';
+                        BSModal.confirm({
+                            title : '预览',
+                            content : htmlStr,
+                            width : '90%',
+                            btnOK : '确定',
+                            btnCancel : '',
+                            maxHeight: '450px'
+                        });
+                    }
+                });
+                
+                $form.bootstrapValidator({
+                    fields: {
+                        theme: {
+                            message: '主题验证失败',
+                            validators: {
+                                notEmpty: {
+                                    message: '请输入培训主题'
+                                }
+                            }
+                        },
+                        lecturer: {
+                            message: '讲师验证失败',
+                            validators: {
+                                notEmpty: {
+                                    message: '请输入讲师姓名'
+                                }
+                            }
+                        },
+                        start_time: {
+                            message: '报名起始时间验证失败',
+                            validators: {
+                                notEmpty: {
+                                    message: '请输入报名起始时间'
+                                }
+                            }
+                        },
+                        end_time: {
+                            message: '报名截止时间验证失败',
+                            validators: {
+                                notEmpty: {
+                                    message: '请输入报名截止时间'
+                                }
+                            }
+                        },
+                        hold_start_time: {
+                            message: '活动起始时间验证失败',
+                            validators: {
+                                notEmpty: {
+                                    message: '请输入活动起始时间'
+                                }
+                            }
+                        },
+                        hold_end_time: {
+                            message: '活动截止时间验证失败',
+                            validators: {
+                                notEmpty: {
+                                    message: '请输入活动截止时间'
+                                }
+                            }
+                        },
+                        address: {
+                            message: '活动地点验证失败',
+                            validators: {
+                                notEmpty: {
+                                    message: '请输入活动地点'
+                                }
+                            }
+                        },
+                        intro: {
+                            message: '简介验证失败',
+                            validators: {
+                                notEmpty: {
+                                    message: '请输入简介内容'
+                                }
+                            }
+                        }
+                    }
+                });
+                
+                //判断必填项是否都已填入内容
+                function checkValidation() {
+                    if($summernote.summernote('isEmpty')) {
+                        toastr.warning('详细内容不能为空');
+                        return false;
+                    } else {
+                        var bsValidator = $form.data('bootstrapValidator');
+                        bsValidator.validate();
+                        var result = bsValidator.isValid();
+                        if(!result) {
+                            toastr.warning('您输入的表单信息验证未通过');
+                        }
+                        return result;
+                    }
+                }
+                
+            });
+            
+            
+            
+            
+                        
+                
+            
+            
+            
+            
+                        
+                
+            
+            
+            
+                        
+                
+            
+            
+            
+                
+                        
+                
+        </script>
+    </body>
+</html>

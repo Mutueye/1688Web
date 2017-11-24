@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-table.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row top-row">
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <div class="block-title no-bottom type2">
+                        <div class="block-title-head">
+                             催费缴费
+                            <div class="block-title-head-deco"></div>
+                        </div>
+                    </div>
+                    <div class="block-table-container text-sm">
+                        <table id="table_1"></table>
+                    </div>
+                    <div class="block-title no-bottom type2 mt-space">
+                        <div class="block-title-head">
+                             会展租赁
+                            <div class="block-title-head-deco"></div>
+                        </div>
+                    </div>
+                    <div class="block-table-container text-sm">
+                        <table id="table_2"></table>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <div class="block-title no-bottom type2">
+                        <div class="block-title-head">
+                             维修管理
+                            <div class="block-title-head-deco"></div>
+                        </div>
+                    </div>
+                    <div class="block-table-container text-sm">
+                        <table id="table_3"></table>
+                    </div>
+                    <div class="block-title no-bottom type2 mt-space">
+                        <div class="block-title-head">
+                             保洁卫生
+                            <div class="block-title-head-deco"></div>
+                        </div>
+                    </div>
+                    <div class="block-table-container text-sm">
+                        <table id="table_4"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">版权所有：中艺1688创意产业园 Copyright ©2012-2017 All Rights Reserved Zhongyi Design Co.,ltd</div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table.min.js"></script>
+        <script src="../js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+        <script src="../js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                $('#table_1').bootstrapTable({
+                    pagination : true,
+                    showPaginationSwitch : false,
+                    clickToSelect : false,
+                    columns: [
+                        {
+                            field: 'type',
+                            title: '催缴类型',
+                            sortable: true,
+                            halign: 'center'
+                        },
+                        {
+                            field: 'org',
+                            title: '催缴企业',
+                            halign: 'center'
+                        },
+                        {
+                            field: 'fee',
+                            title: '催缴金额(元)',
+                            sortable: true,
+                            halign: 'center',
+                            align: 'right'
+                        },
+                        {
+                            field: 'date',
+                            title: '催缴时间',
+                            halign: 'center',
+                            sortable: true
+                        },
+                        {
+                            field: 'name',
+                            title: '负责人',
+                            halign: 'center'
+                        }
+                    ],
+                    data: [
+                        {
+                            type: '物业费',
+                            org: '公司1',
+                            fee: '2330.00',
+                            date: '2017.06.23',
+                            name: '周吴郑'
+                        }, 
+                        {
+                            type: '租赁费',
+                            org: '公司2',
+                            fee: '14290.00',
+                            date: '2017.07.11',
+                            name: '任水寒'
+                        }, 
+                        {
+                            type: '维修费',
+                            org: '公司3',
+                            fee: '310.00',
+                            date: '2017.07.11',
+                            name: '苏普'
+                        }, 
+                        {
+                            type: '维修费',
+                            org: '公司4',
+                            fee: '1250.00',
+                            date: '2017.07.11',
+                            name: '李晟闻'
+                        }, 
+                        {
+                            type: '租赁费',
+                            org: '公司5',
+                            fee: '11311.00',
+                            date: '2017.07.11',
+                            name: '岳叔华'
+                        }, 
+                        {
+                            type: '物业费',
+                            org: '公司6',
+                            fee: '11311.00',
+                            date: '2017.07.11',
+                            name: '侯善稚'
+                        }, 
+                        {
+                            type: '物业费',
+                            org: '公司1',
+                            fee: '2330.00',
+                            date: '2017.06.23',
+                            name: '周吴郑'
+                        }, 
+                        {
+                            type: '租赁费',
+                            org: '公司2',
+                            fee: '14290.00',
+                            date: '2017.07.11',
+                            name: '任水寒'
+                        }, 
+                        {
+                            type: '维修费',
+                            org: '公司3',
+                            fee: '310.00',
+                            date: '2017.07.11',
+                            name: '苏普'
+                        }, 
+                        {
+                            type: '维修费',
+                            org: '公司4',
+                            fee: '1250.00',
+                            date: '2017.07.11',
+                            name: '李晟闻'
+                        }, 
+                        {
+                            type: '租赁费',
+                            org: '公司5',
+                            fee: '11311.00',
+                            date: '2017.07.11',
+                            name: '岳叔华'
+                        }, 
+                        {
+                            type: '物业费',
+                            org: '公司6',
+                            fee: '11311.00',
+                            date: '2017.07.11',
+                            name: '侯善稚'
+                        },
+                        {
+                            type: '物业费',
+                            org: '公司1',
+                            fee: '2330.00',
+                            date: '2017.06.23',
+                            name: '周吴郑'
+                        }, 
+                        {
+                            type: '租赁费',
+                            org: '公司2',
+                            fee: '14290.00',
+                            date: '2017.07.11',
+                            name: '任水寒'
+                        }, 
+                        {
+                            type: '维修费',
+                            org: '公司3',
+                            fee: '310.00',
+                            date: '2017.07.11',
+                            name: '苏普'
+                        }, 
+                        {
+                            type: '维修费',
+                            org: '公司4',
+                            fee: '1250.00',
+                            date: '2017.07.11',
+                            name: '李晟闻'
+                        }, 
+                        {
+                            type: '租赁费',
+                            org: '公司5',
+                            fee: '11311.00',
+                            date: '2017.07.11',
+                            name: '岳叔华'
+                        }, 
+                        {
+                            type: '物业费',
+                            org: '公司6',
+                            fee: '11311.00',
+                            date: '2017.07.11',
+                            name: '侯善稚'
+                        }
+                        
+                    ]
+                });
+                
+                
+                $('#table_2').bootstrapTable({
+                    pagination : true,
+                    showPaginationSwitch : false,
+                    clickToSelect : false,
+                    columns: [
+                        {
+                            field: 'type',
+                            title: '类型',
+                            sortable: true,
+                            halign: 'center'
+                        },
+                        {
+                            field: 'obj',
+                            title: '租对象',
+                            halign: 'center'
+                        },
+                        {
+                            field: 'start',
+                            title: '起始时间',
+                            halign: 'center'
+                        },
+                        {
+                            field: 'end',
+                            title: '结束时间',
+                            halign: 'center'
+                        },
+                        {
+                            field: 'name',
+                            title: '租借人',
+                            halign: 'center'
+                        }
+                    ],
+                    data: [
+                        {
+                            type: '会议室',
+                            obj: 'D1 201',
+                            start: '2017.06.23 14:00',
+                            end: '2017.06.23 17:00',
+                            name: '周吴郑'
+                        }, 
+                        {
+                            type: '展厅',
+                            obj: 'F1 100',
+                            start: '2017.07.09 09:00',
+                            end: '2017.07.09 11:30',
+                            name: '任水寒'
+                        }, 
+                        {
+                            type: '会议室',
+                            obj: 'D1 201',
+                            start: '2017.06.23 14:00',
+                            end: '2017.06.23 17:00',
+                            name: '苏普'
+                        }, 
+                        {
+                            type: '展厅',
+                            obj: 'F1 100',
+                            start: '2017.07.09 09:00',
+                            end: '2017.07.09 11:30',
+                            name: '李晟闻'
+                        }, 
+                        {
+                            type: '会议室',
+                            obj: 'D1 201',
+                            start: '2017.06.23 14:00',
+                            end: '2017.06.23 17:00',
+                            name: '周吴郑'
+                        }, 
+                        {
+                            type: '展厅',
+                            obj: 'F1 100',
+                            start: '2017.07.09 09:00',
+                            end: '2017.07.09 11:30',
+                            name: '任水寒'
+                        }, 
+                        {
+                            type: '会议室',
+                            obj: 'D1 201',
+                            start: '2017.06.23 14:00',
+                            end: '2017.06.23 17:00',
+                            name: '苏普'
+                        }, 
+                        {
+                            type: '展厅',
+                            obj: 'F1 100',
+                            start: '2017.07.09 09:00',
+                            end: '2017.07.09 11:30',
+                            name: '李晟闻'
+                        }, 
+                        {
+                            type: '会议室',
+                            obj: 'D1 201',
+                            start: '2017.06.23 14:00',
+                            end: '2017.06.23 17:00',
+                            name: '周吴郑'
+                        }, 
+                        {
+                            type: '展厅',
+                            obj: 'F1 100',
+                            start: '2017.07.09 09:00',
+                            end: '2017.07.09 11:30',
+                            name: '任水寒'
+                        }, 
+                        {
+                            type: '会议室',
+                            obj: 'D1 201',
+                            start: '2017.06.23 14:00',
+                            end: '2017.06.23 17:00',
+                            name: '苏普'
+                        }, 
+                        {
+                            type: '展厅',
+                            obj: 'F1 100',
+                            start: '2017.07.09 09:00',
+                            end: '2017.07.09 11:30',
+                            name: '李晟闻'
+                        }
+                        
+                    ]
+                });
+                
+                $('#table_3').bootstrapTable({
+                    pagination : true,
+                    showPaginationSwitch : false,
+                    clickToSelect : false,
+                    columns: [
+                        {
+                            field: 'type',
+                            title: '类型',
+                            sortable: true,
+                            halign: 'center'
+                        },
+                        {
+                            field: 'org',
+                            title: '申报企业',
+                            halign: 'center'
+                        },
+                        {
+                            field: 'fee',
+                            title: '评估费用(元)',
+                            sortable: true,
+                            halign: 'center',
+                            align: 'right'
+                        },
+                        {
+                            field: 'date',
+                            title: '维修时间',
+                            halign: 'center',
+                            sortable: true
+                        },
+                        {
+                            field: 'name',
+                            title: '负责人',
+                            halign: 'center'
+                        }
+                    ],
+                    data: [
+                        {
+                            type: '电器',
+                            org: '公司6',
+                            fee: '11311.00',
+                            date: '2017.07.11',
+                            name: '侯善稚'
+                        },
+                        {
+                            type: '管道',
+                            org: '公司1',
+                            fee: '2330.00',
+                            date: '2017.06.23',
+                            name: '周吴郑'
+                        }, 
+                        {
+                            type: '路面',
+                            org: '公司2',
+                            fee: '14290.00',
+                            date: '2017.07.11',
+                            name: '任水寒'
+                        }, 
+                        {
+                            type: '门窗',
+                            org: '公司3',
+                            fee: '310.00',
+                            date: '2017.07.11',
+                            name: '苏普'
+                        }, 
+                        {
+                            type: '电器',
+                            org: '公司1',
+                            fee: '2330.00',
+                            date: '2017.06.23',
+                            name: '周吴郑'
+                        }, 
+                        {
+                            type: '管道',
+                            org: '公司2',
+                            fee: '14290.00',
+                            date: '2017.07.11',
+                            name: '任水寒'
+                        }, 
+                        {
+                            type: '路面',
+                            org: '公司3',
+                            fee: '310.00',
+                            date: '2017.07.11',
+                            name: '苏普'
+                        }, 
+                        {
+                            type: '路面',
+                            org: '公司4',
+                            fee: '1250.00',
+                            date: '2017.07.11',
+                            name: '李晟闻'
+                        }, 
+                        {
+                            type: '电器',
+                            org: '公司5',
+                            fee: '11311.00',
+                            date: '2017.07.11',
+                            name: '岳叔华'
+                        }, 
+                        {
+                            type: '管道',
+                            org: '公司6',
+                            fee: '11311.00',
+                            date: '2017.07.11',
+                            name: '侯善稚'
+                        }, 
+                        {
+                            type: '电器',
+                            org: '公司1',
+                            fee: '2330.00',
+                            date: '2017.06.23',
+                            name: '周吴郑'
+                        }, 
+                        {
+                            type: '管道',
+                            org: '公司2',
+                            fee: '14290.00',
+                            date: '2017.07.11',
+                            name: '任水寒'
+                        }, 
+                        {
+                            type: '路面',
+                            org: '公司3',
+                            fee: '310.00',
+                            date: '2017.07.11',
+                            name: '苏普'
+                        }, 
+                        {
+                            type: '管道',
+                            org: '公司4',
+                            fee: '1250.00',
+                            date: '2017.07.11',
+                            name: '李晟闻'
+                        }, 
+                        {
+                            type: '门窗',
+                            org: '公司5',
+                            fee: '11311.00',
+                            date: '2017.07.11',
+                            name: '岳叔华'
+                        }, 
+                        
+                        {
+                            type: '电器',
+                            org: '公司4',
+                            fee: '1250.00',
+                            date: '2017.07.11',
+                            name: '李晟闻'
+                        }, 
+                        {
+                            type: '电器',
+                            org: '公司5',
+                            fee: '11311.00',
+                            date: '2017.07.11',
+                            name: '岳叔华'
+                        }, 
+                        {
+                            type: '管道',
+                            org: '公司6',
+                            fee: '11311.00',
+                            date: '2017.07.11',
+                            name: '侯善稚'
+                        }
+                        
+                    ]
+                });
+                
+                $('#table_4').bootstrapTable({
+                    pagination : true,
+                    showPaginationSwitch : false,
+                    clickToSelect : false,
+                    columns: [
+                        {
+                            field: 'type',
+                            title: '事务类型',
+                            sortable: true,
+                            halign: 'center'
+                        },
+                        {
+                            field: 'obj',
+                            title: '管理对象',
+                            halign: 'center'
+                        },
+                        {
+                            field: 'circle',
+                            title: '周期(天)',
+                            halign: 'center',
+                            aligh: 'right'
+                        },
+                        {
+                            field: 'lasttime',
+                            title: '上次执行时间',
+                            halign: 'center'
+                        },
+                        {
+                            field: 'name',
+                            title: '负责人',
+                            halign: 'center'
+                        }
+                    ],
+                    data: [
+                        {
+                            type: '浇水',
+                            obj: '云松',
+                            circle: '80',
+                            lasttime: '2017.06.23',
+                            name: '周吴郑'
+                        }, 
+                        {
+                            type: '松土',
+                            obj: '虎皮兰',
+                            circle: '92',
+                            lasttime: '2017.07.09',
+                            name: '任水寒'
+                        }, 
+                        {
+                            type: '除草',
+                            obj: '木槿',
+                            circle: '20',
+                            lasttime: '2017.08.12',
+                            name: '苏普'
+                        }, 
+                        {
+                            type: '浇水',
+                            obj: '云松',
+                            circle: '80',
+                            lasttime: '2017.06.23',
+                            name: '周吴郑'
+                        }, 
+                        {
+                            type: '松土',
+                            obj: '虎皮兰',
+                            circle: '92',
+                            lasttime: '2017.07.09',
+                            name: '任水寒'
+                        }, 
+                        {
+                            type: '除草',
+                            obj: '木槿',
+                            circle: '20',
+                            lasttime: '2017.08.12',
+                            name: '苏普'
+                        },
+                        {
+                            type: '浇水',
+                            obj: '云松',
+                            circle: '80',
+                            lasttime: '2017.06.23',
+                            name: '周吴郑'
+                        }, 
+                        {
+                            type: '松土',
+                            obj: '虎皮兰',
+                            circle: '92',
+                            lasttime: '2017.07.09',
+                            name: '任水寒'
+                        }, 
+                        {
+                            type: '除草',
+                            obj: '木槿',
+                            circle: '20',
+                            lasttime: '2017.08.12',
+                            name: '苏普'
+                        },
+                        {
+                            type: '浇水',
+                            obj: '云松',
+                            circle: '80',
+                            lasttime: '2017.06.23',
+                            name: '周吴郑'
+                        }, 
+                        {
+                            type: '松土',
+                            obj: '虎皮兰',
+                            circle: '92',
+                            lasttime: '2017.07.09',
+                            name: '任水寒'
+                        }, 
+                        {
+                            type: '除草',
+                            obj: '木槿',
+                            circle: '20',
+                            lasttime: '2017.08.12',
+                            name: '苏普'
+                        },
+                        
+                    ]
+                });
+                
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-treeview.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../js/iCheck/skins/square/_all.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">新建角色<a class="btn btn-sm btn-theme pull-right" href="sys-auth-character.html"><i class="fa fa-undo"></i>&nbsp;返回</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid row-space-10">
+            <div class="row">
+                <div class="col-xs-6" style="text-align:right;">
+                    <div class="auth-tree">
+                        <div id="tree"></div>
+                    </div>
+                </div>
+                <div class="col-xs-6" style="text-align:left;">
+                    <div class="auth-tree-right">
+                        <form class="row" id="new_role_form">
+                            <div class="col-xs-12">
+                                <div class="form-group form-group-sm cool-form-group">
+                                    <div class="cool-form-label text-right control-label"> 角色名称：</div>
+                                    <input class="form-control" type="text" id="role_name" name="role_name">
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="form-group form-group-sm cool-form-group">
+                                    <div class="cool-form-label text-right control-label"> 角色描述：</div>
+                                    <input class="form-control" type="text" id="role_desc" name="role_desc">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="box-form bg-gray-f5" style="border-bottom:none;">
+                            <div class="btn btn-block btn-theme" id="btn_add_role"><i class="fa fa-plus"></i>&nbsp;新建角色</div>
+                        </div>
+                        <div class="box-form">
+                            <div class="row no-bottom">
+                                <div class="col-xs-12" id="checked_text">
+                                     请勾选要添加的对象，并点击上方按钮新建角色</div>
+                            </div>
+                        </div>
+                        <div class="box-form" style="margin-top:0.1rem;">
+                            <div class="row no-bottom">
+                                <div class="col-xs-12">
+                                    <div id="selected_text">请点选已经勾选的权限对象节点，设定具体行为配置</div>
+                                </div>
+                                <div class="col-xs-12" id="node_info"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/underscore-min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap-treeview.min.js"></script>
+        <script src="../js/jquery.scrollFix.js"></script>
+        <script src="../js/bootstrap-select/bootstrap-select.min.js"></script>
+        <script src="../js/bootstrap-select/defaults-zh_CN.min.js"></script>
+        <script src="../js/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="../js/bootstrapvalidator/zh_CN.js"></script>
+        <script src="../js/iCheck/icheck.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/sys-auth-character-new.js"></script>
+    </body>
+</html>

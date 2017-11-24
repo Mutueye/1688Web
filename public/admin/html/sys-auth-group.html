@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="1688双创智慧园区管理系统">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>1688双创智慧园区管理系统</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-treeview.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container-fluid row-space-common">
+            <div class="row mt-space">
+                <div class="col-xs-12">
+                    <div class="page-title">权限管理-组</div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid row-space-10">
+            <div class="row">
+                <div class="col-xs-6" style="text-align:right;">
+                    <div class="auth-tree">
+                        <div id="tree"></div>
+                    </div>
+                </div>
+                <div class="col-xs-6" style="text-align:left;">
+                    <div class="auth-tree-right">
+                        <div class="box-form bg-gray-f5" style="border-bottom:none;">
+                            <div class="row no-bottom">
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="btn btn-block btn-theme" id="btn_new_group"><i class="fa fa-users"></i>&nbsp;创建组</div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4"><a class="btn btn-block btn-theme" id="btn_add_group" href="sys-auth-group-addgroup.html"><i class="fa fa-users"></i>&nbsp;添加组</a></div>
+                                <div class="col-xs-12 col-sm-4" id="btn_remove_group_container">
+                                    <div class="btn btn-block bg-red bg-hover-darken font-white" id="btn_remove_group"><i class="fa fa-remove"></i>&nbsp;删除组</div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4" id="btn_user_container">
+                                    <div class="btn btn-block btn-theme" id="btn_user"><i class="fa fa-user-plus"></i>&nbsp;增减成员</div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4" id="btn_add_role_container"><a class="btn btn-block btn-theme" id="btn_add_role" href="sys-auth-group-addrole.html"><i class="fa fa-plus"></i>&nbsp;添加角色</a></div>
+                                <div class="col-xs-12 col-sm-4" id="btn_remove_role_container">
+                                    <div class="btn btn-block bg-red bg-hover-darken font-white" id="btn_remove_role"><i class="fa fa-remove"></i>&nbsp;删除角色</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-form" id="node_info">请点选节点进行相应操作</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/underscore-min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap-treeview.min.js"></script>
+        <script src="../js/jquery.scrollFix.js"></script>
+        <script src="../js/bootstrap-select/bootstrap-select.min.js"></script>
+        <script src="../js/bootstrap-select/defaults-zh_CN.min.js"></script>
+        <script src="../js/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="../js/bootstrapvalidator/zh_CN.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/sys-auth-group.js"></script>
+    </body>
+</html>
