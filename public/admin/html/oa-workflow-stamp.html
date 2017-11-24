@@ -8,54 +8,60 @@
         <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
         <title>1688双创智慧园区管理系统</title>
         <link rel="stylesheet" href="../css/font-awesome.min.css">
-        <link rel="stylesheet" href="../css/perfect-scrollbar.min.css">
-        <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
         <link rel="stylesheet" href="../css/bootstrap-table.min.css">
-        <link rel="stylesheet" href="../css/bootstrap-editable.css">
-        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
-        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/fileinput.min.css">
-        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/theme.min.css">
-        <link rel="stylesheet" href="../js/iCheck/skins/square/_all.css">
-        <link rel="stylesheet" href="../js/summernote/summernote.css">
-        <link rel="stylesheet" href="../css/bootstrap-treeview.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
         <link rel="stylesheet" href="../css/toastr.min.css">
         <link rel="stylesheet" href="../css/index.css">
     </head>
     <body>
         <div class="container-fluid row-space-common">
-            <div class="row">
+            <div class="row mt-space">
                 <div class="col-xs-12">
-                    <h2>用印申请</h2>
+                    <div class="page-title">用印申请</div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="box-form">用印申请未提供原型，相关页面仅供参考</div>
+                    <div class="box-form has-title row-space-10">
+                        <div class="box-form-title">查询条件</div>
+                        <form class="row no-bottom" id="query_form" name="query_form">
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">申请人：</div>
+                                    <input class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group cool-form-group form-group-sm">
+                                    <div class="cool-form-label text-right control-label">申请部门：</div>
+                                    <input class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="btn btn-line btn-small"><i class="fa fa-search"></i>&nbsp;查询</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="toolbar" id="toolbar"><a class="btn btn-theme" id="toolbtn_new" href="oa-workflow-stamp-new.html"><i class="fa fa-plus"></i>&nbsp;新增</a>
+                        <div class="btn btn-theme" id="toolbtn_edit"><i class="fa fa-edit"></i>&nbsp;编辑</div>
+                        <div class="btn btn-theme" id="toolbtn_remove"><i class="fa fa-remove"></i>&nbsp;删除</div>
+                    </div>
+                    <table id="table"></table>
                 </div>
             </div>
         </div>
         <script src="../js/jquery.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
-        <script src="../js/highcharts.js"></script>
-        <script src="../js/highcharts-zh_CN.js"></script>
-        <script src="../js/iscroll.js"></script>
-        <script src="../js/perfect-scrollbar.jquery.min.js"></script>
         <script src="../js/moment/moment.min.js"></script>
         <script src="../js/moment/zh-cn.js"></script>
         <script src="../js/bootstrap-datetimepicker.min.js"></script>
-        <script src="../js/iCheck/icheck.min.js"></script>
-        <script src="../js/bootstrapvalidator/bootstrapValidator.min.js"></script>
-        <script src="../js/bootstrapvalidator/zh_CN.js"></script>
         <script src="../js/bootstrap-table/bootstrap-table.min.js"></script>
         <script src="../js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
-        <script src="../js/bootstrap-table/bootstrap-table-export.min.js"></script>
-        <script src="../js/tableExport.min.js"></script>
-        <script src="../js/bootstrap-table/bootstrap-table-editable.min.js"></script>
-        <script src="../js/bootstrap-editable.min.js"></script>
-        <script src="../js/bootstrap-treeview.min.js"></script>
-        <script src="../js/bootstrap-fileinput/fileinput.min.js"></script>
-        <script src="../js/bootstrap-fileinput/zh.js"></script>
-        <script src="../js/bootstrap-fileinput/theme.min.js"></script>
-        <script src="../js/summernote/summernote.min.js"></script>
-        <script src="../js/summernote/summernote-zh-CN.min.js"></script>
         <script src="../js/toastr.min.js"></script>
         <script src="../js/BSModal.js"></script>
         <script src="../js/common.js"></script>
         <script src="../js/app.js"></script>
+        <script src="../js/oa-workflow-stamp.js"></script>
     </body>
 </html>

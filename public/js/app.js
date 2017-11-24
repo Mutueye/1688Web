@@ -1275,8 +1275,13 @@ if (typeof Object.create !== "function") {
 
             //根据jsonData组装dom
             var htmlString = "";
-            for (var i in base.sliderData) {
-                htmlString += "<div class='" + base.options.itemClass + "'>" + "<div class='" + base.options.itemImageClass + "'>" + "<img src='" + data[i].imageurl + "'>" + "</div>" + "</div>";
+            for (var i in data) {
+                if (data[i].linkurl) {
+                    var target = data[i].linktarget ? data[i].linktarget : '_self';
+                    htmlString += "<a class='" + base.options.itemClass + "' href='" + data[i].linkurl + "' target='" + target + "'>" + "<div class='" + base.options.itemImageClass + "'>" + "<img src='" + data[i].imageurl + "'>" + "</div>" + "</a>";
+                } else {
+                    htmlString += "<div class='" + base.options.itemClass + "'>" + "<div class='" + base.options.itemImageClass + "'>" + "<img src='" + data[i].imageurl + "'>" + "</div>" + "</div>";
+                }
             }
             base.$elem.append(htmlString);
         },
@@ -1336,7 +1341,14 @@ if (typeof Object.create !== "function") {
                         if (base.options.paginationHasTimer) paginationItemHtml += '<div class="' + base.options.paginationTimerClass + '"></div>';
                         if (base.options.paginationHasDivider && i < base.itemsAmount - 1) paginationItemHtml += '<div class="' + base.options.paginationDividerClass + '"></div>';
                         if (base.options.paginationHasContent) {
-                            var infoHtml = '<div class="' + base.options.paginationContentClass + '">' + '<div class="' + base.options.paginationTitleClass + '">' + base.sliderData[i].title + '</div>';
+                            var infoHtml = '<div class="' + base.options.paginationContentClass + '">';
+                            if (base.sliderData[i].linkurl) {
+                                var target = base.sliderData[i].linktarget ? base.sliderData[i].linktarget : '_self';
+                                //infoHtml += '<a class="' + base.options.paginationTitleClass + '" href="' + base.sliderData[i].linkurl + '" target="' + target + '">' + base.sliderData[i].title + '</a>';
+                                infoHtml += '<div class="' + base.options.paginationTitleClass + '">' + '<a href="' + base.sliderData[i].linkurl + '" target="' + target + '">' + base.sliderData[i].title + '</a>' + '</div>';
+                            } else {
+                                infoHtml += '<div class="' + base.options.paginationTitleClass + '">' + base.sliderData[i].title + '</div>';
+                            }
                             if (base.options.paginationHasInfo) {
                                 infoHtml += '<div class="' + base.options.paginationInfoClass + '">' + base.sliderData[i].info + '</div>';
                             }
@@ -1618,6 +1630,24 @@ if (typeof Object.create !== "function") {
         waitInClass: 'wait-in', //customcss 当前没有动作，等待进入的class
 
         jsonData: false,
+        /* json数据示例
+        var sliderData = [
+            {
+                imageurl : "../images/slider_4.jpg",
+                linkurl : "http://www.baidu.com/", //链接地址
+                linktarget : "_blank", //链接方式"_blank" "_self"
+                title : '放飞梦想 砥砺前行--祝贺嘉瑞德物业成立四周年',
+                info : '2017年6月6日是青岛嘉瑞德物业管理有限公司成立四周年的日子，在这四年的日子里，嘉瑞德物业在各部门员工的共同努力下，各项工作有条不紊的开展。'
+            },
+            {
+                imageurl : "../images/slider_1.jpg",
+                linkurl : "http://www.baidu.com/", //链接地址
+                linktarget : "_blank", //链接方式"_blank" "_self"
+                title : '园区积极对接区人社局',
+                info : '园区积极对接区人社局，帮企业揽高端人才，解人才之忧。'
+            }
+        ];
+        */
         jsonSuccess: false,
 
         beforeInit: false,

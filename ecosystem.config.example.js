@@ -30,7 +30,7 @@ module.exports = {
       user : '{username}',
       host : '{host}',
       ref  : 'origin/master',
-      repo : 'https://github.com/Mutueye/shibei-data.git',
+      repo : 'https://github.com/Mutueye/1688Web.git',
       path : '{path}',
       'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production'
     },
@@ -38,7 +38,7 @@ module.exports = {
       user : '{username}',
       host : '{host}',
       ref  : 'origin/master',
-      repo : 'https://github.com/Mutueye/shibei-data.git',
+      repo : 'https://github.com/Mutueye/1688Web.git',
       path : '{path}',
       'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env dev',
       env  : {
