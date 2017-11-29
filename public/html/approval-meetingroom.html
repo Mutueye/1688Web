@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="../css/bootstrap-select.min.css">
         <link rel="stylesheet" href="../js/iCheck/skins/square/_all.css">
         <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="../css/jquery.range.css">
         <link rel="stylesheet" href="../css/toastr.min.css">
         <link rel="stylesheet" href="../css/index.css">
     </head>
@@ -144,35 +145,34 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                                    <div class="col-xs-12">
                                         <div class="form-group cool-form-group">
-                                            <div class="cool-form-label text-right control-label">开始时间：</div>
-                                            <div class="input-group" id="time_start_group">
-                                                <input class="form-control" type="text" id="time_start" name="time_start">
+                                            <div class="cool-form-label text-right control-label">会议日期：</div>
+                                            <div class="input-group" id="date_group">
+                                                <input class="form-control" type="text" id="date" name="date">
                                                 <div class="input-group-addon btn btn-line"><i class="fa fa-calendar"></i></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                                    <div class="col-xs-12">
                                         <div class="form-group cool-form-group">
-                                            <div class="cool-form-label text-right control-label">结束时间：</div>
-                                            <div class="input-group" id="time_end_group">
-                                                <input class="form-control" type="text" id="time_end" name="time_end">
-                                                <div class="input-group-addon btn btn-line"><i class="fa fa-calendar"></i></div>
-                                            </div>
+                                            <div class="cool-form-label text-right control-label">会议时间段：</div>
+                                            <div class="cool-form-content" id="time_range_label"> </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                                        <div class="form-group form-group-sm cool-form-group">
-                                            <div class="control-label cool-form-label text-right">会议器械：</div>
-                                            <select class="form-control selectpicker" id="train_state" name="train_state" title="请选择会议器械" data-actions-box="true" multiple>
-                                                <option>投影仪</option>
-                                                <option>白板</option>
-                                                <option>电视</option>
-                                            </select>
+                                    <div class="col-xs-12">
+                                        <div class="just-label">请拖动下方滑块选择会议时间范围</div>
+                                        <div class="time-range-container" id="time_range_container">
+                                            <input id="time_range_input" type="hidden" value="480,1200">
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                                    <div class="col-xs-12">
+                                        <div class="box-form has-title bg-white">
+                                            <div class="box-form-title bg-white">增值服务</div>
+                                            <div class="row no-bottom" id="add_value_content"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
                                         <div class="form-group cool-form-group">
                                             <div class="cool-form-label text-right control-label">会议室价格：</div>
                                             <div class="input-group">
@@ -181,7 +181,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                                    <div class="col-xs-12">
                                         <div class="form-group cool-form-group">
                                             <div class="cool-form-label text-right control-label">会议费用：</div>
                                             <div class="input-group">
@@ -190,13 +190,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                                    <div class="col-xs-12">
                                         <label class="icheck-label">
                                             <input type="checkbox" name="checkbox_agree" id="checkbox_agree">
                                             <div class="icheck-text" style="display:inline-block; vertical-align: middle; height:22px; line-height:22px; font-weight:normal; font-size:13px;">&nbsp;我已阅读并同意</div>
                                         </label><a style="display:inline-block; height:22px; vertical-align: middle; line-height:22px; text-decoration:underline !important; font-weight:bold; font-size:13px;" href="#">使用条例</a>
                                     </div>
-                                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 text-center">
+                                    <div class="col-xs-12 text-center">
                                         <div class="btn btn-large btn-theme" id="btn_submit"><i class="fa fa-upload"></i>&nbsp;确认提交</div>
                                     </div>
                                 </form>
@@ -265,6 +265,7 @@
         <script src="../js/moment/moment.min.js"></script>
         <script src="../js/moment/zh-cn.js"></script>
         <script src="../js/bootstrap-datetimepicker.min.js"></script>
+        <script src="../js/jquery.range.js"></script>
         <script src="../js/toastr.min.js"></script>
         <script src="../js/BSModal.js"></script>
         <script src="../js/common.js"></script>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="hisense">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <meta name="format-detection" content="telephone=no">
+        <title>1688Web</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../js/iCheck/skins/square/_all.css">
+        <link rel="stylesheet" href="../css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="../css/jquery.range.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index-m.css">
+    </head>
+    <body>
+        <div class="main-content">
+            <div class="topbar">
+                <div class="topbar-content">
+                    <div class="logo"><img src="../images/logo-white.png"></div>
+                </div>
+            </div>
+            <div class="main-body">
+                <div class="topbar-space"></div>
+                <div class="container tp-container row-space-10">
+                    <div class="tp-content">
+                        <div class="deco-box"></div>
+                        <div class="tp-content-title">展厅租赁
+                            <div class="tp-content-title-deco">中艺1688<br>SHANDONG ARTEX</div>
+                        </div>
+                        <div class="tp-content-inner">
+                            <form class="row no-bottom" id="form" name="form">
+                                <div id="room_list">
+                                    <div class="room-item col-xs-6 col-sm-3">
+                                        <div class="rcs-pic-item">
+                                            <input class="rcs-radio" type="radio" name="room" value="D202">
+                                            <div class="abs-container abs-hp-1of2">
+                                                <div class="abs-content"><img class="rcs-pic-img" src="../images/rcs-item-01.jpg"></div>
+                                            </div>
+                                            <div class="rcs-pic-label">D202</div>
+                                        </div>
+                                    </div>
+                                    <div class="room-item col-xs-6 col-sm-3">
+                                        <div class="rcs-pic-item">
+                                            <input class="rcs-radio" type="radio" name="room" value="D302">
+                                            <div class="abs-container abs-hp-1of2">
+                                                <div class="abs-content"><img class="rcs-pic-img" src="../images/rcs-item-02.jpg"></div>
+                                            </div>
+                                            <div class="rcs-pic-label">D302</div>
+                                        </div>
+                                    </div>
+                                    <div class="room-item col-xs-6 col-sm-3">
+                                        <div class="rcs-pic-item">
+                                            <input class="rcs-radio" type="radio" name="room" value="C201">
+                                            <div class="abs-container abs-hp-1of2">
+                                                <div class="abs-content"><img class="rcs-pic-img" src="../images/rcs-item-03.jpg"></div>
+                                            </div>
+                                            <div class="rcs-pic-label">C201</div>
+                                        </div>
+                                    </div>
+                                    <div class="room-item col-xs-6 col-sm-3">
+                                        <div class="rcs-pic-item">
+                                            <input class="rcs-radio" type="radio" name="room" value="F103">
+                                            <div class="abs-container abs-hp-1of2">
+                                                <div class="abs-content"><img class="rcs-pic-img" src="../images/rcs-item-04.jpg"></div>
+                                            </div>
+                                            <div class="rcs-pic-label">F103</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group cool-form-group">
+                                        <div class="cool-form-label text-right control-label">开始时间：</div>
+                                        <div class="input-group" id="time_start_group">
+                                            <input class="form-control" type="text" id="time_start" name="time_start">
+                                            <div class="input-group-addon btn btn-line"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group cool-form-group">
+                                        <div class="cool-form-label text-right control-label">结束时间：</div>
+                                        <div class="input-group" id="time_end_group">
+                                            <input class="form-control" type="text" id="time_end" name="time_end">
+                                            <div class="input-group-addon btn btn-line"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="box-form has-title bg-white">
+                                        <div class="box-form-title bg-white">增值服务</div>
+                                        <div class="row no-bottom" id="add_value_content"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group cool-form-group">
+                                        <div class="cool-form-label text-right control-label">展厅价格：</div>
+                                        <div class="input-group">
+                                            <input class="form-control" id="price" type="text" value="100" disabled>
+                                            <div class="input-group-addon">元/时</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group cool-form-group">
+                                        <div class="cool-form-label text-right control-label">展厅费用：</div>
+                                        <div class="input-group">
+                                            <input class="form-control" id="fee" type="text" value="0" disabled>
+                                            <div class="input-group-addon">元</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <label class="icheck-label">
+                                        <input type="checkbox" name="checkbox_agree" id="checkbox_agree">
+                                        <div class="icheck-text" style="display:inline-block; vertical-align: middle; height:22px; line-height:22px; font-weight:normal; font-size:13px;">&nbsp;我已阅读并同意</div>
+                                    </label><a style="display:inline-block; height:22px; vertical-align: middle; line-height:22px; text-decoration:underline !important; font-weight:bold; font-size:13px;" href="#">使用条例</a>
+                                </div>
+                                <div class="col-xs-12 text-center">
+                                    <div class="btn btn-block btn-theme" id="btn_submit"><i class="fa fa-upload"></i>&nbsp;确认提交</div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footbar row-space-0">
+                <div class="footbar-content row">
+                    <div class="col-xs-4"><a class="footbar-btn touch-active sel" href="m-index.html">
+                            <div class="footbar-btn-icon"><i class="iconfont icon-shouye"></i></div>
+                            <div class="footbar-btn-text">首页</div></a></div>
+                    <div class="col-xs-4">
+                        <div class="footbar-btn touch-active">
+                            <div class="footbar-btn-icon"><i class="iconfont icon-yuanqu"></i></div>
+                            <div class="footbar-btn-text">园区</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="footbar-btn touch-active" id="btn_personal">
+                            <div class="footbar-btn-icon"><i class="iconfont icon-yonghu"></i></div>
+                            <div class="footbar-btn-text">我的</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footbar-space"></div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/iCheck/icheck.min.js"></script>
+        <script src="../js/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="../js/bootstrapvalidator/zh_CN.js"></script>
+        <script src="../js/bootstrap-select/bootstrap-select.min.js"></script>
+        <script src="../js/bootstrap-select/defaults-zh_CN.min.js"></script>
+        <script src="../js/moment/moment.min.js"></script>
+        <script src="../js/moment/zh-cn.js"></script>
+        <script src="../js/bootstrap-datetimepicker.min.js"></script>
+        <script src="../js/jquery.range.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app-m.js"></script>
+        <script src="../js/approval-hall.js"></script>
+    </body>
+</html>
