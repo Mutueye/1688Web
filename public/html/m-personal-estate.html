@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="description" content="hisense">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <meta name="format-detection" content="telephone=no">
+        <title>1688Web</title>
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../js/iCheck/skins/square/_all.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/fileinput.min.css">
+        <link rel="stylesheet" href="../js/bootstrap-fileinput/css/theme.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/index-m.css">
+    </head>
+    <body>
+        <div class="main-content">
+            <div class="topbar">
+                <div class="topbar-content">
+                    <div class="logo"><img src="../images/logo-white.png"></div>
+                </div>
+            </div>
+            <div class="main-body">
+                <div class="topbar-space"></div>
+                <div class="row-space-10">
+                    <div class="container tp-container">
+                        <div class="row no-bottom">
+                            <div class="col-xs-12">
+                                <div class="user-info" id="user_info">
+                                    <div class="user-info-avatar-box">
+                                        <div class="user-info-avatar"><img src="../images/avatar-default.jpg"></div>
+                                    </div>
+                                    <div class="user-info-content">
+                                        <div class="user-name">上善若水</div>
+                                        <div class="user-info-line"><span class="font-gray-99">邮箱：</span>mail@mail.com</div>
+                                        <div class="user-info-line"><span class="font-gray-99">手机号：</span>13812345678</div>
+                                        <div class="user-info-line"><span class="font-gray-99">性别：</span>男</div>
+                                        <div class="btn btn-small btn-edit btn-theme" id="btn_edit"> <i class="fa fa-edit"></i>&nbsp;修改资料</div>
+                                    </div>
+                                </div>
+                                <div class="user-info user-form" id="user_form">
+                                    <form class="user-info-content row-space-10" id="form">
+                                        <div class="row no-bottom">
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group cool-form-group form-group-sm">
+                                                    <div class="cool-form-label text-right control-label">用户名：</div>
+                                                    <input class="form-control" type="text" name="username" id="username">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group cool-form-group form-group-sm">
+                                                    <div class="cool-form-label text-right control-label">邮箱：</div>
+                                                    <input class="form-control" type="text" name="email" id="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group cool-form-group form-group-sm">
+                                                    <div class="cool-form-label text-right control-label">手机号：</div>
+                                                    <input class="form-control" type="text" name="phone" id="phone">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group cool-form-group form-group-sm">
+                                                    <div class="cool-form-label text-right control-label">性别：</div>
+                                                    <select class="form-control" name="gender" id="gender">
+                                                        <option>男</option>
+                                                        <option>女</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <div class="form-group cool-form-group form-group-sm">
+                                                    <div class="cool-form-label text-right control-label">头像：</div>
+                                                    <input class="form-control input-file" id="input_appendix" type="file">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 text-center">
+                                                <div class="btn btn-theme btn-large" id="btn_save"> <i class="fa fa-save"></i>&nbsp;保存修改</div>
+                                                <div class="btn btn-default btn-large bg-gray-f5 bg-hover-darken" id="btn_cancel">取消</div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="content-switch type2"><a class="btn-content-switch" href="m-personal-notice.html">我的通知</a><a class="btn-content-switch" href="m-personal-sys.html">系统消息</a><a class="btn-content-switch" href="m-personal-message.html">我的留言</a><a class="btn-content-switch" href="m-personal-my-fee.html">我的缴费</a><a class="btn-content-switch" href="m-personal-fee-notice.html">收费通知</a>
+                                    <div class="btn-content-switch sel">物业申请</div><a class="btn-content-switch" href="m-personal-conf.html">会展申请</a>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="tp-content">
+                                    <div class="deco-box"></div>
+                                    <div class="tp-content-inner">
+                                        <ul class="nav nav-tabs simple-tabs">
+                                            <li class="active"><a href="#tab_1" role="tab" data-toggle="tab">保洁申请</a></li>
+                                            <li><a href="#tab_2" role="tab" data-toggle="tab">维修申请</a></li>
+                                            <li><a href="#tab_3" role="tab" data-toggle="tab">配送申请</a></li>
+                                            <li><a href="#tab_4" role="tab" data-toggle="tab">装修申请</a></li>
+                                        </ul>
+                                        <div class="tab-content mt-10">
+                                            <div class="tab-pane active" id="tab_1" role="tabpanel">
+                                                <div class="message-filter mt-10">
+                                                    <div class="btn-message-filter" id="btn_tab1_unfinished">未完成</div>
+                                                    <div class="btn-message-filter" id="btn_tab1_finished">已完成</div>
+                                                    <div class="btn-message-filter sel" id="btn_tab1_all">全部</div>
+                                                </div>
+                                                <div class="pinfo-item finished">
+                                                    <div class="pinfo-item-title has-right">
+                                                        <div class="right-text font-green-grass">已完成</div>申请具体内容描述性文字内容描述
+                                                    </div>
+                                                    <div class="pinfo-item-sub">2017-10-23</div>
+                                                </div>
+                                                <div class="pinfo-item unfinished">
+                                                    <div class="pinfo-item-title has-right">
+                                                        <div class="right-text font-yellow-bronze">未完成</div>申请具体内容描述性文字内容描述
+                                                    </div>
+                                                    <div class="pinfo-item-sub">2017-11-28</div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab_2" role="tabpanel">
+                                                <div class="message-filter mt-10">
+                                                    <div class="btn-message-filter" id="btn_tab2_unfinished">未完成</div>
+                                                    <div class="btn-message-filter" id="btn_tab2_finished">已完成</div>
+                                                    <div class="btn-message-filter sel" id="btn_tab2_all">全部</div>
+                                                </div>
+                                                <div class="pinfo-item finished">
+                                                    <div class="pinfo-item-title has-right">
+                                                        <div class="right-text font-green-grass">已完成</div>申请具体内容描述性文字内容描述
+                                                    </div>
+                                                    <div class="pinfo-item-sub">2017-10-23</div>
+                                                </div>
+                                                <div class="pinfo-item unfinished">
+                                                    <div class="pinfo-item-title has-right">
+                                                        <div class="right-text font-yellow-bronze">未完成</div>申请具体内容描述性文字内容描述
+                                                    </div>
+                                                    <div class="pinfo-item-sub">2017-11-28</div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab_3" role="tabpanel">
+                                                <div class="message-filter mt-10">
+                                                    <div class="btn-message-filter" id="btn_tab3_unfinished">未完成</div>
+                                                    <div class="btn-message-filter" id="btn_tab3_finished">已完成</div>
+                                                    <div class="btn-message-filter sel" id="btn_tab3_all">全部</div>
+                                                </div>
+                                                <div class="pinfo-item finished">
+                                                    <div class="pinfo-item-title has-right">
+                                                        <div class="right-text font-green-grass">已完成</div>申请具体内容描述性文字内容描述
+                                                    </div>
+                                                    <div class="pinfo-item-sub">2017-10-23</div>
+                                                </div>
+                                                <div class="pinfo-item unfinished">
+                                                    <div class="pinfo-item-title has-right">
+                                                        <div class="right-text font-yellow-bronze">未完成</div>申请具体内容描述性文字内容描述
+                                                    </div>
+                                                    <div class="pinfo-item-sub">2017-11-28</div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab_4" role="tabpanel">
+                                                <div class="message-filter mt-10">
+                                                    <div class="btn-message-filter" id="btn_tab4_unfinished">未完成</div>
+                                                    <div class="btn-message-filter" id="btn_tab4_finished">已完成</div>
+                                                    <div class="btn-message-filter sel" id="btn_tab4_all">全部</div>
+                                                </div>
+                                                <div class="pinfo-item finished">
+                                                    <div class="pinfo-item-title has-right">
+                                                        <div class="right-text font-green-grass">已完成</div>申请具体内容描述性文字内容描述
+                                                    </div>
+                                                    <div class="pinfo-item-sub">2017-10-23</div>
+                                                </div>
+                                                <div class="pinfo-item unfinished">
+                                                    <div class="pinfo-item-title has-right">
+                                                        <div class="right-text font-yellow-bronze">未完成</div>申请具体内容描述性文字内容描述
+                                                    </div>
+                                                    <div class="pinfo-item-sub">2017-11-28</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footbar row-space-0">
+                <div class="footbar-content row">
+                    <div class="col-xs-4"><a class="footbar-btn touch-active" href="m-index.html">
+                            <div class="footbar-btn-icon"><i class="iconfont icon-shouye"></i></div>
+                            <div class="footbar-btn-text">首页</div></a></div>
+                    <div class="col-xs-4"><a class="footbar-btn touch-active" href="m-activity.html">
+                            <div class="footbar-btn-icon"><i class="iconfont icon-yuanqu"></i></div>
+                            <div class="footbar-btn-text">活动</div></a></div>
+                    <div class="col-xs-4">
+                        <div class="footbar-btn touch-active sel" id="btn_personal">
+                            <div class="footbar-btn-icon"><i class="iconfont icon-yonghu"></i></div>
+                            <div class="footbar-btn-text">我的</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footbar-space"></div>
+        </div>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/iCheck/icheck.min.js"></script>
+        <script src="../js/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="../js/bootstrapvalidator/zh_CN.js"></script>
+        <script src="../js/bootstrap-select/bootstrap-select.min.js"></script>
+        <script src="../js/bootstrap-select/defaults-zh_CN.min.js"></script>
+        <script src="../js/bootstrap-fileinput/fileinput.min.js"></script>
+        <script src="../js/bootstrap-fileinput/zh.js"></script>
+        <script src="../js/bootstrap-fileinput/theme.min.js"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/BSModal.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/app-m.js"></script>
+        <script src="../js/personal-estate.js"></script>
+    </body>
+</html>

@@ -28,5 +28,7 @@ node_modules
 bower_components
 build/
 
+*.DS_Store
+
 ecosystem.config.js
 package-lock.json
