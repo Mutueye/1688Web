@@ -54,7 +54,7 @@ $(document).ready(function(){
     }
 
     //添加一个新消息
-    //type :"新任务"、"新通知"、"新公告"
+    //type :"新任务"、"新通知"、"新公告"、"紧急任务"
     //content : 消息文字内容
     //link : 消息链接
     function addOneMessage(type, content, link) {
@@ -62,9 +62,12 @@ $(document).ready(function(){
         var messageHtml= '<div class="message-item"><div class="message-item-head">' + type + '</div>';
 
         //更新菜单按钮右侧数字
-        if(type == "新任务") {
+        if(type == "新任务" || type == "紧急任务") {
             unreadNums.mission += 1;
             updateNum(unreadNums.mission, $mission);
+            if(type == "紧急任务") {
+                messageHtml = '<div class="message-item"><div class="message-item-head bg-red-intense">' + type + '</div>';
+            }
         } else {
             unreadNums.notice += 1;
             updateNum(unreadNums.notice, $notice);
@@ -155,7 +158,7 @@ $(document).ready(function(){
     setTimeout(example_message_2, 80000);
     setTimeout(example_message_2, 160000);
     function example_message_1(){
-        addOneMessage('新任务','请借我10个比特币','/html/index-oa.html#oa-personal-mission.html');
+        addOneMessage('紧急任务','请借我10个比特币','/html/index-oa.html#oa-personal-mission.html');
     }
     function example_message_2(){
         addOneMessage('新通知','震惊！明天我们将继续加班','/html/index-oa.html#oa-personal-notice.html');
