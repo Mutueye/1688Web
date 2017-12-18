@@ -31,7 +31,7 @@ $(document).ready(function(){
 
         $btn.click(function(){
             if(imState == 'close') {
-                window.open('/html/IM.html');
+                window.open('/admin/html/IM.html');
             }
         });
 
