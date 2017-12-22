@@ -25,6 +25,7 @@
                     <div class="toolbar" id="toolbar"><a class="btn btn-theme" id="toolbtn_new" href="chuangye-roadshow-new.html"><i class="fa fa-plus"></i>&nbsp;发布</a>
                         <div class="btn btn-theme" id="toolbtn_examine"><i class="fa fa-check-square"></i>&nbsp;审核</div>
                         <div class="btn btn-theme" id="toolbtn_edit"><i class="fa fa-edit"></i>&nbsp;编辑</div>
+                        <div class="btn btn-theme" id="toolbtn_view"><i class="fa fa-eye"></i>&nbsp;查看</div>
                         <div class="btn btn-theme" id="toolbtn_delete"><i class="fa fa-remove"></i>&nbsp;删除</div>
                         <div class="btn btn-theme" id="toolbtn_chat"><i class="fa fa-comments"></i>&nbsp;报名统计</div>
                     </div>
@@ -55,6 +56,7 @@
                 var $btn_edit = $('#toolbtn_edit');
                 var $btn_delete = $('#toolbtn_delete');
                 var $btn_chat = $('#toolbtn_chat');
+                var $btn_view = $('#toolbtn_view');
             
                 var $table = $('#table');
                 
@@ -180,6 +182,20 @@
                     }
                 });
                 
+                $btn_view.click(function () {
+                    if(!$(this).attr('disabled')) {
+                        //取表格的选中行数据
+                        var arrselections = $table.bootstrapTable('getSelections');
+                        if (arrselections.length <= 0) {
+                            toastr.warning('请选择有效数据');
+                            return;
+                        }
+                        console.log(JSON.stringify(arrselections));
+            
+                        window.location.href='chuangye-roadshow-view.html';
+                    }
+                });
+                
                 //报名统计
                 $btn_chat.click(function () {
                     if(!$(this).attr('disabled')) {
@@ -234,6 +250,7 @@
                     var tableSelections = $table.bootstrapTable('getSelections');
                     $btn_edit.attr('disabled', tableSelections.length != 1);
                     $btn_chat.attr('disabled', tableSelections.length != 1);
+                    $btn_view.attr('disabled', tableSelections.length != 1);
                     $btn_delete.attr('disabled', !$table.bootstrapTable('getSelections').length);
                     //待审核状态才可以点击审核按钮
                     $btn_examine.attr('disabled', tableSelections.length != 1 || (tableSelections.length == 1 && tableSelections[0].state != '待审核'));
