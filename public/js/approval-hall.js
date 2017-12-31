@@ -15,6 +15,7 @@ $(document).ready(function(){
     var base_price = 100; //从服务器读取的展厅的基础价格
     var total_price = base_price; //总价格将会包含增值服务的价格
 
+
     //已经被使用的时间区段，从服务器读取的近6个月内的已经被其他用户占用的时间区段
     var usedTimeSections = [
         {
@@ -394,9 +395,17 @@ $(document).ready(function(){
 
     //发布
     $btn_submit.click(function(){
-        if(checkValidation()) {
-            //提交成功后提示
-            toastr.success('您的展厅申请提交成功!');
+        var $this = $(this);
+        if(!$this.attr('disabled')) {
+            if(checkValidation()) {
+                //提交成功后提示
+                toastr.success('您的展厅申请提交成功!');
+
+                $this.attr('disabled','disabled');
+                setTimeout(function(){
+                    $this.removeAttr('disabled');
+                },3000);
+            }
         }
     });
 

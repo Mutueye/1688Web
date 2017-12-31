@@ -17,7 +17,7 @@
     <body class="email-content">
         <div class="email-left-menu"><a class="btn-new-mail btn btn-theme" href="oa-personal-email-write.html"><i class="fa fa-pencil-square"></i>&nbsp;写邮件</a>
             <ul class="nav nav-tabs email-menu-tabs">
-                <li class="active"><a href="oa-personal-email.html"><i class="fa fa-envelope-open"></i>&nbsp;收件箱</a></li>
+                <li><a href="oa-personal-email.html"><i class="fa fa-envelope-open"></i>&nbsp;收件箱</a></li>
                 <li><a href="oa-personal-email-send.html"><i class="fa fa-send"></i>&nbsp;已发送</a></li>
                 <li><a href="oa-personal-email-draft.html"><i class="fa fa-file-text"></i>&nbsp;草稿箱</a></li>
                 <li><a href="oa-personal-email-trash.html"><i class="fa fa-trash"></i>&nbsp;回收站</a></li>
@@ -27,16 +27,30 @@
             <div class="container-fluid row-space-10">
                 <div class="row mt-10">
                     <div class="col-xs-12">
-                        <div class="section-title">
-                            <div class="section-title-icon"></div>
-                            <div class="section-title-text" style="background-color:#f7f8fa;">收件箱</div>
-                        </div>
+                        <div class="toolbar"><a class="btn btn-theme" href="oa-personal-email.html"><i class="fa fa-arrow-left"></i>&nbsp;返回</a><a class="btn btn-theme" href="oa-personal-email-write.html"><i class="fa fa-mail-forward"></i>&nbsp;回复</a></div>
                     </div>
                     <div class="col-xs-12">
-                        <div class="toolbar" id="toolbar1">
-                            <div class="btn btn-theme" id="toolbtn1_remove"><i class="fa fa-remove"></i>&nbsp;删除</div>
+                        <div class="email-title">年末福利-500元礼券 -- 给忙碌了一年的你の奖励！</div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="email-info-label">发件人：</div>
+                        <div class="email-info-content">黄任勋@1688.com</div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="email-info-label">收件人：</div>
+                        <div class="email-info-content">我<span class="font-gray-99">&lt;address@1688.com&gt;</span></div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="email-info-label">时&nbsp;&nbsp;&nbsp;间：</div>
+                        <div class="email-info-content">2017.12.12 12:12</div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="box-form">
+                            <div class="article-content">邮件内容</div>
+                            <div class="article-appendix-title mail-appendix-title">附件</div>
+                            <div class="article-appendix"><i class="fa fa-file-archive-o"></i>&nbsp;<a href="#">关于某某项目的通知.pdf</a></div>
+                            <div class="article-appendix"><i class="fa fa-file-archive-o"></i>&nbsp;<a href="#">关于某某项目的需求定义报告书.doc</a></div>
                         </div>
-                        <table id="table1"></table>
                     </div>
                 </div>
             </div>
@@ -53,6 +67,6 @@
         <script src="../js/BSModal.js"></script>
         <script src="../js/common.js"></script>
         <script src="../js/app.js"></script>
-        <script src="../js/oa-personal-email.js"></script>
+        <script src="../js/oa-personal-email-detail.js"></script>
     </body>
 </html>
